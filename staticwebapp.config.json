@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "route": "/*",
+      "filter": {
+        "host": ["leanserviceconsulting.com"]
+      },
+      "redirect": "https://www.leanserviceconsulting.com",
+      "statusCode": 301
+    }
+  ]
+}
