@@ -48,10 +48,66 @@
     .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.75rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
     .card h3 { color: var(--primary); margin-bottom: 0.75rem; }
 
-    /* Vision Banner */
+    /* Vision/Mission/Values Panel Box */
     .vision-box { background: var(--primary); color: #FFF; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin-bottom: 4rem; }
-    .vision-box h2 { color: #FFF; margin-bottom: 1rem; }
-    .vision-box p { color: #94A3B8; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
+    
+    .tab-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #94A3B8;
+      padding: 0.6rem 1.25rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #FFF;
+    }
+
+    .tab-btn.active {
+      background: var(--accent);
+      color: #FFF;
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out forwards;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .panel-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .tab-panel h2 { color: #FFF; margin-bottom: 1rem; }
+    .tab-panel p { color: #94A3B8; font-size: 1.15rem; max-width: 750px; margin: 0 auto; line-height: 1.7; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* Contact Section */
     .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; background: var(--bg-light); padding: 3rem; border-radius: 12px; }
@@ -103,14 +159,50 @@
   </div>
 
   <main>
-    <!-- Vision Section -->
+    <!-- Vision / Mission / Values Interactive Panel -->
     <section>
       <div class="vision-box">
-        <h2 data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</h2>
-        <p data-en="Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations."
-           data-ca="Estendre l’aplicació de les metodologies Lean més enllà de les grans empreses industrials i ajudar a crear organitzacions resilients, eficients i adaptables.">
-          Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations.
-        </p>
+        <div class="tab-container">
+          <button class="tab-btn active" onclick="switchTab('vision', this)">
+            <span>👁️</span> <span data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</span>
+          </button>
+          <button class="tab-btn" onclick="switchTab('mission', this)">
+            <span>🎯</span> <span data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</span>
+          </button>
+          <button class="tab-btn" onclick="switchTab('values', this)">
+            <span>💎</span> <span data-en="Our Values" data-ca="Els Nostres Valors">Our Values</span>
+          </button>
+        </div>
+
+        <!-- Vision -->
+        <div id="tab-vision" class="tab-panel active">
+          <span class="panel-icon">👁️</span>
+          <h2 data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</h2>
+          <p data-en="Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations."
+             data-ca="Estendre l’aplicació de les metodologies Lean més enllà de les grans empreses industrials i ajudar a crear organitzacions resilients, eficients i adaptables.">
+            Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations.
+          </p>
+        </div>
+
+        <!-- Mission -->
+        <div id="tab-mission" class="tab-panel">
+          <span class="panel-icon">🎯</span>
+          <h2 data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</h2>
+          <p data-en="Empower service businesses to achieve operational excellence through standardized workflows, clear organizational roles, and continuous improvement culture."
+             data-ca="Acompanyar les empreses de serveis cap a l'excel·lència operativa mitjançant la millora de processos, la claretat organitzativa i la cultura de millora contínua.">
+            Empower service businesses to achieve operational excellence through standardized workflows, clear organizational roles, and continuous improvement culture.
+          </p>
+        </div>
+
+        <!-- Values -->
+        <div id="tab-values" class="tab-panel">
+          <span class="panel-icon">💎</span>
+          <h2 data-en="Our Values" data-ca="Els Nostres Valors">Our Values</h2>
+          <p data-en="Operational Excellence • Transparency & Alignment • Continuous Improvement • People Empowerment"
+             data-ca="Excel·lència Operativa • Transparència i Alineació • Millora Contínua • Capacitació de les Persones">
+            Operational Excellence • Transparency & Alignment • Continuous Improvement • People Empowerment
+          </p>
+        </div>
       </div>
     </section>
 
@@ -121,7 +213,7 @@
         <div class="card">
           <h3 data-en="People Management" data-ca="Gestió de Persones">People Management</h3>
           <p data-en="Unclear role responsibilities leading to unresolved conflicts, uneven workloads, and cross-orders that delay tasks."
-             data-ca="Conflictes sense gestionar per falta de claredat en les responsabilitats, càrregues de treball desequilibrades i ordres creuades.">
+             data-ca="Conflictes sense gestionar per falta de claretat en les responsabilitats, càrregues de treball desequilibrades i ordres creuades.">
             Unclear role responsibilities leading to unresolved conflicts, uneven workloads, and cross-orders that delay tasks.
           </p>
         </div>
@@ -203,7 +295,7 @@
     <p>&copy; 2026 Lean Service Consulting. All rights reserved.</p>
   </footer>
 
-  <!-- Language Switcher Script -->
+  <!-- Scripts: Language and Tab Switcher -->
   <script>
     function switchLanguage(lang) {
       document.querySelectorAll('[data-en]').forEach(el => {
@@ -214,6 +306,19 @@
       document.getElementById('btn-ca').classList.toggle('active', lang === 'ca');
 
       localStorage.setItem('preferred_lang', lang);
+    }
+
+    function switchTab(tabId, btnElement) {
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      document.getElementById(`tab-${tabId}`).classList.add('active');
+      btnElement.classList.add('active');
     }
 
     document.addEventListener('DOMContentLoaded', () => {
