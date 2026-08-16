@@ -47,9 +47,6 @@
     .hero-content { max-width: 800px; margin: 0 auto; }
     .hero h1 { font-size: 2.75rem; color: #FFFFFF; margin-bottom: 1.25rem; line-height: 1.2; }
     .hero p { font-size: 1.2rem; color: #94A3B8; margin-bottom: 0; line-height: 1.7; }
-    
-    .btn { display: inline-block; background: var(--accent); color: #FFF; padding: 0.8rem 1.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
-    .btn:hover { background: var(--accent-hover); }
 
     /* Grid & Cards */
     .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 2rem; text-align: center; }
@@ -69,22 +66,26 @@
     }
 
     .tab-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       color: #94A3B8;
-      padding: 0.6rem 1.25rem;
+      padding: 0.65rem 1.4rem;
       border-radius: 30px;
       cursor: pointer;
       font-weight: 600;
       font-size: 0.95rem;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       transition: all 0.3s ease;
     }
 
+    .tab-btn svg {
+      transition: stroke 0.3s ease;
+    }
+
     .tab-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.18);
       color: #FFF;
     }
 
@@ -92,7 +93,11 @@
       background: var(--accent);
       color: #FFF;
       border-color: var(--accent);
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+
+    .tab-btn.active svg {
+      stroke: #FFFFFF;
     }
 
     .tab-panel {
@@ -105,9 +110,15 @@
     }
 
     .panel-icon {
-      font-size: 2.5rem;
       margin-bottom: 1rem;
-      display: block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(2, 132, 199, 0.12);
+      border: 1px solid rgba(2, 132, 199, 0.25);
     }
 
     .tab-panel h2 { color: #FFF; margin-bottom: 1rem; }
@@ -172,24 +183,46 @@
   </div>
 
   <main>
-    <!-- Vision / Mission / Values Section -->
+    <!-- Vision / Mission / Values Section with Auto-Rotator & SVG Icons -->
     <section id="about">
-      <div class="vision-box">
+      <div class="vision-box" id="vision-box">
         <div class="tab-container">
-          <button class="tab-btn active" onclick="switchTab('vision', this)">
-            <span>👁️</span> <span data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</span>
+          <!-- Tab 1: Vision (Compass) -->
+          <button class="tab-btn active" data-tab="vision" onclick="userSelectTab('vision', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+            <span data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</span>
           </button>
-          <button class="tab-btn" onclick="switchTab('mission', this)">
-            <span>🎯</span> <span data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</span>
+
+          <!-- Tab 2: Mission (Target) -->
+          <button class="tab-btn" data-tab="mission" onclick="userSelectTab('mission', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            <span data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</span>
           </button>
-          <button class="tab-btn" onclick="switchTab('values', this)">
-            <span>💎</span> <span data-en="Our Values" data-ca="Els Nostres Valors">Our Values</span>
+
+          <!-- Tab 3: Values (Shield) -->
+          <button class="tab-btn" data-tab="values" onclick="userSelectTab('values', this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span data-en="Our Values" data-ca="Els Nostres Valors">Our Values</span>
           </button>
         </div>
 
-        <!-- Vision -->
+        <!-- Vision Panel -->
         <div id="tab-vision" class="tab-panel active">
-          <span class="panel-icon">👁️</span>
+          <div class="panel-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
           <h2 data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</h2>
           <p data-en="Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations."
              data-ca="Estendre l’aplicació de les metodologies Lean més enllà de les grans empreses industrials i ajudar a crear organitzacions resilients, eficients i adaptables.">
@@ -197,9 +230,15 @@
           </p>
         </div>
 
-        <!-- Mission -->
+        <!-- Mission Panel -->
         <div id="tab-mission" class="tab-panel">
-          <span class="panel-icon">🎯</span>
+          <div class="panel-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
           <h2 data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</h2>
           <p data-en="Empower service businesses to achieve operational excellence through standardized workflows, clear organizational roles, and continuous improvement culture."
              data-ca="Acompanyar les empreses de serveis cap a l'excel·lència operativa mitjançant la millora de processos, la claretat organitzativa i la cultura de millora contínua.">
@@ -207,9 +246,13 @@
           </p>
         </div>
 
-        <!-- Values -->
+        <!-- Values Panel -->
         <div id="tab-values" class="tab-panel">
-          <span class="panel-icon">💎</span>
+          <div class="panel-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
           <h2 data-en="Our Values" data-ca="Els Nostres Valors">Our Values</h2>
           <p data-en="Operational Excellence • Transparency & Alignment • Continuous Improvement • People Empowerment"
              data-ca="Excel·lència Operativa • Transparència i Alineació • Millora Contínua • Capacitació de les Persones">
@@ -275,7 +318,7 @@
         <div class="card">
           <h3 data-en="Visual Management" data-ca="Seguiment Visual i Projectes">Visual Management</h3>
           <p data-en="Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately."
-             data-ca="Eines de seguiment visual per synchronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
+             data-ca="Eines de seguiment visual per sincronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
             Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately.
           </p>
         </div>
@@ -308,8 +351,12 @@
     <p>&copy; 2026 Lean Service Consulting. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts: Language and Tab Switcher -->
+  <!-- Scripts: Language, Tab Switcher, and Auto-Rotator -->
   <script>
+    const tabs = ['vision', 'mission', 'values'];
+    let currentTabIndex = 0;
+    let autoRotateInterval = null;
+
     function switchLanguage(lang) {
       document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute(`data-${lang}`);
@@ -321,22 +368,48 @@
       localStorage.setItem('preferred_lang', lang);
     }
 
-    function switchTab(tabId, btnElement) {
+    function switchTab(tabId) {
+      currentTabIndex = tabs.indexOf(tabId);
+
       document.querySelectorAll('.tab-panel').forEach(panel => {
         panel.classList.remove('active');
       });
 
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active');
+        if (btn.getAttribute('data-tab') === tabId) {
+          btn.classList.add('active');
+        }
       });
 
       document.getElementById(`tab-${tabId}`).classList.add('active');
-      btnElement.classList.add('active');
+    }
+
+    function userSelectTab(tabId) {
+      switchTab(tabId);
+      resetAutoRotate(); // Reset timer on manual user click
+    }
+
+    function nextTab() {
+      currentTabIndex = (currentTabIndex + 1) % tabs.length;
+      switchTab(tabs[currentTabIndex]);
+    }
+
+    function startAutoRotate() {
+      autoRotateInterval = setInterval(nextTab, 5000); // Rotates every 5 seconds
+    }
+
+    function resetAutoRotate() {
+      clearInterval(autoRotateInterval);
+      startAutoRotate();
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('preferred_lang') || 'en';
       switchLanguage(savedLang);
+      
+      // Start 5-second automatic rotation
+      startAutoRotate();
     });
   </script>
 </body>
