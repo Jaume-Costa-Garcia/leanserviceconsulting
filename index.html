@@ -1,129 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lean Service Consulting</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        body {
-            color: #333;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-        }
-        header {
-            background-color: #003366;
-            color: #fff;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        nav {
-            background-color: #002244;
-            display: flex;
-            justify-content: center;
-            padding: 0.75rem;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        .card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-top: 4px solid #003366;
-        }
-        .card h3 {
-            margin-bottom: 0.5rem;
-            color: #003366;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: #e9ecef;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lean Service Consulting | Operational Excellence</title>
+  <style>
+    :root {
+      --primary: #0F172A;
+      --accent: #0284C7;
+      --accent-hover: #0369A1;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text: #334155;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: #FFFFFF; line-height: 1.6; }
+
+    /* Header & Navigation */
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #FFF; z-index: 100; }
+    .brand-container { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .brand-logo { height: 40px; width: auto; object-fit: contain; }
+    .logo-text { font-weight: 700; font-size: 1.25rem; color: var(--primary); }
+    .logo-text span { color: var(--accent); }
+    
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .lang-toggle { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+    .lang-toggle button { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; }
+    .lang-toggle button.active { color: var(--accent); background: #E0F2FE; }
+
+    /* Layout Sections */
+    section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .hero { text-align: center; padding: 5rem 2rem; background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 100%); max-width: 100%; }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 2.75rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; }
+    .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .slogan { font-style: italic; font-weight: 500; color: var(--accent); margin-bottom: 2rem; }
+    
+    .btn { display: inline-block; background: var(--accent); color: #FFF; padding: 0.8rem 1.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+    .btn:hover { background: var(--accent-hover); }
+
+    /* Grid & Cards */
+    .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 2rem; text-align: center; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.75rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+    .card h3 { color: var(--primary); margin-bottom: 0.75rem; }
+
+    /* Vision Banner */
+    .vision-box { background: var(--primary); color: #FFF; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin-bottom: 4rem; }
+    .vision-box h2 { color: #FFF; margin-bottom: 1rem; }
+    .vision-box p { color: #94A3B8; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
+
+    /* Contact Section */
+    .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; background: var(--bg-light); padding: 3rem; border-radius: 12px; }
+    .contact-info p { margin-bottom: 1rem; }
+    .contact-info strong { color: var(--primary); }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      section { padding: 2.5rem 1rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-    <img src="logo.png" alt="Lean Service Consulting Logo" style="max-width: 180px; height: auto; margin-bottom: 1rem;">
-    <h1>Lean Service Consulting</h1>
-    <p>Operational Excellence & Process Optimization</p>
-    </header>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        <section id="about" style="margin-bottom: 3rem;">
-            <h2>Maximizing Value, Eliminating Waste</h2>
-            <p style="margin-top: 0.5rem;">We apply proven Lean principles to service organizations and business operations, streamlining workflows, enhancing customer value, and driving sustainable continuous improvement.</p>
-        </section>
-
-        <section id="services">
-            <h2>Our Core Services</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Value Stream Mapping</h3>
-                    <p>Analyze end-to-end workflows to identify inefficiencies, bottlenecks, and non-value-added activities across operational processes.</p>
-                </div>
-                <div class="card">
-                    <h3>Process Optimization</h3>
-                    <p>Design visual management tools, standard operating procedures, and continuous improvement frameworks tailored to operational teams.</p>
-                </div>
-                <div class="card">
-                    <h3>Lean Management Training</h3>
-                    <p>Empower teams with continuous improvement methodologies, root-cause analysis techniques, and Kaizen action plans.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" style="margin-top: 3rem;">
-            <h2>Get in Touch</h2>
-            <p style="margin-top: 0.5rem;">Ready to transform your service operations? Contact us to discuss tailored continuous improvement solutions.</p>
-        </section>
+  <!-- Navigation Header with Logo -->
+  <header>
+    <a href="#" class="brand-container">
+      <img src="logo.png" alt="Lean Service Consulting Logo" class="brand-logo" />
+      <span class="logo-text">Lean Service <span>Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="lang-toggle">
+        <button id="btn-en" onclick="switchLanguage('en')" class="active">EN</button>
+        <span>|</span>
+        <button id="btn-ca" onclick="switchLanguage('ca')">CA</button>
+      </div>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2026 Lean Service Consulting. All rights reserved.</p>
-    </footer>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1 data-en="Operational Excellence for Service Companies" 
+          data-ca="Excel·lència Operativa per a Empreses de Serveis">
+        Operational Excellence for Service Companies
+      </h1>
+      <p data-en="We transform service organizations using adapted Lean methodologies: aligned teams, standard processes, and continuous improvement." 
+         data-ca="Transformem la gestió de la teva organització aplicant metodologies Lean adaptades: equips alineats, processos estàndard i millora contínua.">
+        We transform service organizations using adapted Lean methodologies: aligned teams, standard processes, and continuous improvement.
+      </p>
+      <div class="slogan" data-en="“Better people, better standards, better services tomorrow.”" data-ca="“Better people, better standards, better services tomorrow.”">
+        “Better people, better standards, better services tomorrow.”
+      </div>
+      <a href="#contact" class="btn" data-en="Contact Us" data-ca="Contacta'ns">Contact Us</a>
+    </div>
+  </div>
 
+  <main>
+    <!-- Vision Section -->
+    <section>
+      <div class="vision-box">
+        <h2 data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</h2>
+        <p data-en="Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations."
+           data-ca="Estendre l’aplicació de les metodologies Lean més enllà de les grans empreses industrials i ajudar a crear organitzacions resilients, eficients i adaptables.">
+          Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Problems We Solve -->
+    <section>
+      <h2 class="section-title" data-en="Challenges We Address" data-ca="Quins Problemes Detectem?">Challenges We Address</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 data-en="People Management" data-ca="Gestió de Persones">People Management</h3>
+          <p data-en="Unclear role responsibilities leading to unresolved conflicts, uneven workloads, and cross-orders that delay tasks."
+             data-ca="Conflictes sense gestionar per falta de claredat en les responsabilitats, càrregues de treball desequilibrades i ordres creuades.">
+            Unclear role responsibilities leading to unresolved conflicts, uneven workloads, and cross-orders that delay tasks.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-en="Work Methodology" data-ca="Metodologia de Treball">Work Methodology</h3>
+          <p data-en="Inconsistent project structures, lack of brand identity, repeat operational mistakes, and highly variable task completion times."
+             data-ca="Inconsistència en formats i estructures, falta d'identitat, errors repetits i variabilitat excessiva en el temps d'execució.">
+            Inconsistent project structures, lack of brand identity, repeat operational mistakes, and highly variable task completion times.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-en="Project Management" data-ca="Gestió de Projectes">Project Management</h3>
+          <p data-en="Competing priorities caused by poor forecasting, along with information bottlenecks that slow down decision-making."
+             data-ca="Prioritats contrapostes per falta de planificació i falta d'informació clara per escollir tasques prioritàries.">
+            Competing priorities caused by poor forecasting, along with information bottlenecks that slow down decision-making.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-en="Continuous Improvement" data-ca="Millora Contínua">Continuous Improvement</h3>
+          <p data-en="Lack of initiative when facing problems and minimal daily time dedicated to optimizing routine workflows."
+             data-ca="Falta d'iniciativa davant dels problemes i una mínima part de la jornada dedicada a millorar les tasques diàries.">
+            Lack of initiative when facing problems and minimal daily time dedicated to optimizing routine workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section>
+      <h2 class="section-title" data-en="Our Solutions" data-ca="Les Nostres Solucions">Our Solutions</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 data-en="Clear Responsibilities" data-ca="Responsabilitats i Estructura">Clear Responsibilities</h3>
+          <p data-en="Define organizational structures, job descriptions, and versatility skills matrices paired with tailored training plans."
+             data-ca="Organigrama i descripció del lloc de treball, matrius de polivalència i disseny de plans de formació a mida.">
+            Define organizational structures, job descriptions, and versatility skills matrices paired with tailored training plans.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-en="Standard Work & VSM" data-ca="Treball Estàndard i VSM">Standard Work & VSM</h3>
+          <p data-en="Group services into families, map value streams (VSM), and establish standard operating procedures to reduce errors and execution costs."
+             data-ca="Agrupació de serveis per famílies, mapa de flux de valor (VSM) i mètodes de treball estàndard per acotar costos i temps.">
+            Group services into families, map value streams (VSM), and establish standard operating procedures to reduce errors and execution costs.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-en="Visual Management" data-ca="Seguiment Visual i Projectes">Visual Management</h3>
+          <p data-en="Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately."
+             data-ca="Eines de seguiment visual per sincronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
+            Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title" data-en="Get in Touch" data-ca="Contacta amb Nosaltres">Get in Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p><strong data-en="Email:" data-ca="Correu electrònic:">Email:</strong><br />
+            <a href="mailto:jaume.costa@leanserviceconsulting.com">jaume.costa@leanserviceconsulting.com</a>
+          </p>
+          <p><strong data-en="Phone (UAE):" data-ca="Telèfon (EAU):">Phone (UAE):</strong><br />
+            <a href="tel:+971585272837">+971 58 527 2837</a>
+          </p>
+          <p><strong data-en="Phone (Spain):" data-ca="Telèfon (Espanya):">Phone (Spain):</strong><br />
+            <a href="tel:+34636138078">+34 636 13 80 78</a>
+          </p>
+          <p><strong data-en="Location:" data-ca="Ubicació:">Location:</strong><br />
+            Dubai, UAE / Spain / Remote Consulting
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Lean Service Consulting. All rights reserved.</p>
+  </footer>
+
+  <!-- Language Switcher Script -->
+  <script>
+    function switchLanguage(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ca').classList.toggle('active', lang === 'ca');
+
+      localStorage.setItem('preferred_lang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('preferred_lang') || 'en';
+      switchLanguage(savedLang);
+    });
+  </script>
 </body>
 </html>
