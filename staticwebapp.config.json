@@ -2,13 +2,5 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/images/*.{png,jpg,jpeg,gif,svg}", "/css/*"]
-  },
-  "routes": [
-    {
-      "route": "/*",
-      "hostName": "leanserviceconsulting.com",
-      "redirect": "https://www.leanserviceconsulting.com",
-      "statusCode": 301
-    }
-  ]
+  }
 }
