@@ -22,10 +22,8 @@
 
     /* Header & Navigation */
     header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #FFF; z-index: 100; flex-wrap: wrap; gap: 1rem; }
-    .brand-container { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .brand-container { display: flex; align-items: center; text-decoration: none; }
     .brand-logo { height: 40px; width: auto; object-fit: contain; }
-    .logo-text { font-weight: 700; font-size: 1.25rem; color: var(--primary); }
-    .logo-text span { color: var(--accent); }
     
     .nav-links { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
     .nav-menu { display: flex; align-items: center; gap: 1.25rem; list-style: none; }
@@ -38,11 +36,17 @@
 
     /* Layout Sections */
     section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .hero { text-align: center; padding: 5rem 2rem; background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 100%); max-width: 100%; }
+    
+    /* Hero Section - Dark Slate Navy */
+    .hero { 
+      text-align: center; 
+      padding: 6rem 2rem; 
+      background: #0F172A; 
+      max-width: 100%; 
+    }
     .hero-content { max-width: 800px; margin: 0 auto; }
-    h1 { font-size: 2.75rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; }
-    .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-    .slogan { font-style: italic; font-weight: 500; color: var(--accent); margin-bottom: 2rem; }
+    .hero h1 { font-size: 2.75rem; color: #FFFFFF; margin-bottom: 1.25rem; line-height: 1.2; }
+    .hero p { font-size: 1.2rem; color: #94A3B8; margin-bottom: 0; line-height: 1.7; }
     
     .btn { display: inline-block; background: var(--accent); color: #FFF; padding: 0.8rem 1.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
     .btn:hover { background: var(--accent-hover); }
@@ -123,7 +127,7 @@
     footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
+      .hero h1 { font-size: 2rem; }
       section { padding: 2.5rem 1rem; }
       header { justify-content: center; text-align: center; }
       .nav-links { flex-direction: column; gap: 0.75rem; }
@@ -132,11 +136,10 @@
 </head>
 <body>
 
-  <!-- Navigation Header with Shortcuts -->
+  <!-- Navigation Header -->
   <header>
     <a href="#" class="brand-container">
       <img src="logo.png" alt="Lean Service Consulting Logo" class="brand-logo" />
-      <span class="logo-text">Lean Service <span>Consulting</span></span>
     </a>
     
     <div class="nav-links">
@@ -154,7 +157,7 @@
     </div>
   </header>
 
-  <!-- Hero Section (Option 2) -->
+  <!-- Hero Section (Dark Slate Navy) -->
   <div class="hero">
     <div class="hero-content">
       <h1 data-en="Operational Excellence Experts" 
@@ -165,10 +168,6 @@
          data-ca="A Lean Service Consulting, ajudem a les organitzacions a assolir un creixement sostenible aplicant metodologies Lean a mida que optimitzen les operacions i eleven la qualitat del servei.">
         At Lean Service Consulting, we empower organizations to achieve sustainable growth by applying tailored Lean methodologies that streamline operations and elevate service quality.
       </p>
-      <div class="slogan" data-en="“Better people, better standards, better services tomorrow.”" data-ca="“Better people, better standards, better services tomorrow.”">
-        “Better people, better standards, better services tomorrow.”
-      </div>
-      <a href="#contact" class="btn" data-en="Contact Us" data-ca="Contacta'ns">Contact Us</a>
     </div>
   </div>
 
