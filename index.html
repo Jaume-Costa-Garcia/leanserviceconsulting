@@ -1,4 +1,4 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,16 +6,16 @@ html_content = """<!DOCTYPE html>
   <title>Lean Service Consulting | Operational Excellence Experts</title>
   <style>
     :root {
-      --primary: #0F172A;
-      --accent: #0284C7;
+      --primary: #0F172A;          /* Deep Dark Navy */
+      --primary-card: #1E293B;     /* Slate Dark Card Fill */
+      --accent: #0284C7;          /* Vibrant Sky/Blue */
       --accent-hover: #0369A1;
-      --bg-light: #F8FAFC;
-      --card-bg: #FFFFFF;
-      --text: #334155;
-      --text-muted: #64748B;
-      --border: #E2E8F0;
+      --bg-dark: #0F172A;          /* Dark Theme Page Background */
+      --text-light: #F8FAFC;      /* High contrast light text */
+      --text-muted: #94A3B8;      /* Secondary text color */
+      --border-dark: rgba(255, 255, 255, 0.12); /* Subtle light border for dark cards */
 
-      /* Vibrant Category Colors matching presentation style */
+      /* Vibrant Category Colors */
       --color-people: #0284C7;       /* Vibrant Sky/Blue */
       --color-methodology: #0D9488;  /* Teal/Emerald */
       --color-project: #D97706;      /* Amber/Orange */
@@ -24,44 +24,81 @@ html_content = """<!DOCTYPE html>
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: #FFFFFF; line-height: 1.6; width: 100%; overflow-x: hidden; }
+    
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      color: var(--text-light); 
+      background: var(--bg-dark); 
+      line-height: 1.6; 
+      width: 100%; 
+      overflow-x: hidden; 
+    }
 
-    /* Header & Navigation - Full Width */
-    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 3rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #FFF; z-index: 100; width: 100%; }
+    /* Header & Navigation - Dark Theme */
+    header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 1rem 3rem; 
+      border-bottom: 1px solid var(--border-dark); 
+      position: sticky; 
+      top: 0; 
+      background: var(--bg-dark); 
+      z-index: 100; 
+      width: 100%; 
+    }
     .brand-container { display: flex; align-items: center; text-decoration: none; }
     .brand-logo { height: 40px; width: auto; object-fit: contain; }
     
     .nav-links { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
     .nav-menu { display: flex; align-items: center; gap: 1.25rem; list-style: none; }
-    .nav-menu a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-menu a { text-decoration: none; color: var(--text-light); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
     .nav-menu a:hover { color: var(--accent); }
 
-    .lang-toggle { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.9rem; }
-    .lang-toggle button { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; }
-    .lang-toggle button.active { color: var(--accent); background: #E0F2FE; }
+    .lang-toggle { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.9rem; color: var(--text-muted); }
+    .lang-toggle button { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; transition: all 0.2s; }
+    .lang-toggle button.active { color: #FFFFFF; background: var(--accent); }
 
-    /* Layout Sections - Full Width Container */
-    section { padding: 4rem 3rem; width: 100%; max-width: 100%; }
+    /* Layout Sections */
+    section { padding: 4rem 3rem; width: 100%; max-width: 100%; background: var(--bg-dark); }
     
     /* Hero Section */
     .hero { 
       text-align: center; 
-      padding: 6rem 3rem; 
-      background: #0F172A; 
+      padding: 6rem 3rem 4rem 3rem; 
+      background: var(--bg-dark); 
       width: 100%; 
     }
     .hero-content { max-width: 1000px; margin: 0 auto; }
     .hero h1 { font-size: 3rem; color: #FFFFFF; margin-bottom: 1.25rem; line-height: 1.2; font-weight: 700; }
-    .hero p { font-size: 1.25rem; color: #94A3B8; margin-bottom: 0; line-height: 1.7; }
+    .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 0; line-height: 1.7; }
 
     /* General Grid & Section Titles */
-    .section-title { font-size: 2.25rem; color: var(--primary); margin-bottom: 2.5rem; text-align: center; font-weight: 700; }
+    .section-title { font-size: 2.25rem; color: #FFFFFF; margin-bottom: 2.5rem; text-align: center; font-weight: 700; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; width: 100%; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-    .card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.25rem; }
+    
+    .card { 
+      background: var(--primary-card); 
+      border: 1px solid var(--border-dark); 
+      padding: 2rem; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    }
+    .card h3 { color: #FFFFFF; margin-bottom: 0.75rem; font-size: 1.25rem; }
+    .card p { color: var(--text-muted); }
 
     /* Dark Panel Box (Vision/Mission/Values) */
-    .vision-box { background: var(--primary); color: #FFF; padding: 3.5rem 3rem; border-radius: 16px; text-align: center; margin-bottom: 2rem; width: 100%; }
+    .vision-box { 
+      background: var(--primary-card); 
+      color: #FFF; 
+      padding: 3.5rem 3rem; 
+      border-radius: 16px; 
+      border: 1px solid var(--border-dark);
+      text-align: center; 
+      margin-bottom: 2rem; 
+      width: 100%; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
     
     .tab-container {
       display: flex;
@@ -72,7 +109,7 @@ html_content = """<!DOCTYPE html>
     }
 
     .tab-btn {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: #FFFFFF;
       padding: 0.75rem 1.6rem;
@@ -86,8 +123,8 @@ html_content = """<!DOCTYPE html>
       transition: all 0.3s ease;
     }
 
-    .tab-btn svg { transition: stroke 0.3s ease; stroke: #94A3B8; }
-    .tab-btn:hover { background: rgba(255, 255, 255, 0.18); color: #FFFFFF; }
+    .tab-btn svg { transition: stroke 0.3s ease; stroke: var(--text-muted); }
+    .tab-btn:hover { background: rgba(255, 255, 255, 0.15); color: #FFFFFF; }
     .tab-btn.active { background: var(--accent); color: #FFFFFF; border-color: var(--accent); box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35); }
     .tab-btn.active svg { stroke: #FFFFFF; }
 
@@ -107,16 +144,16 @@ html_content = """<!DOCTYPE html>
     }
 
     .tab-panel h2 { color: #FFF; margin-bottom: 1rem; font-size: 1.8rem; }
-    .tab-panel p { color: #94A3B8; font-size: 1.2rem; max-width: 900px; margin: 0 auto; line-height: 1.7; }
+    .tab-panel p { color: var(--text-muted); font-size: 1.2rem; max-width: 900px; margin: 0 auto; line-height: 1.7; }
     .tab-panel p strong { color: #F8FAFC; }
 
-    /* VIBRANT FULL-WIDTH CHALLENGES SHOWCASE */
+    /* CHALLENGES SHOWCASE - DARK THEME */
     .challenges-container {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
+      background: var(--primary-card);
+      border: 1px solid var(--border-dark);
       border-radius: 16px;
       padding: 3rem;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       width: 100%;
     }
 
@@ -129,15 +166,15 @@ html_content = """<!DOCTYPE html>
     }
 
     .challenge-tab-btn {
-      background: #FFFFFF;
-      border: 1.5px solid #E2E8F0;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-dark);
       padding: 1.2rem 1.25rem;
       border-radius: 12px;
       cursor: pointer;
       text-align: left;
       font-weight: 600;
       font-size: 1rem;
-      color: #475569;
+      color: var(--text-muted);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -147,54 +184,54 @@ html_content = """<!DOCTYPE html>
     }
 
     .challenge-tab-btn svg {
-      stroke: #64748B;
+      stroke: var(--text-muted);
       transition: stroke 0.3s ease;
       flex-shrink: 0;
     }
 
     .challenge-tab-btn:hover {
-      border-color: #CBD5E1;
-      color: var(--primary);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
     }
 
-    /* Vibrant Active Tab State Specifics */
+    /* Active Tab States on Dark Background */
     .challenge-tab-btn[data-challenge="people"].active {
       border-color: var(--color-people);
-      color: var(--color-people);
-      background: #F0F9FF;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.12);
+      color: #FFFFFF;
+      background: rgba(2, 132, 199, 0.15);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
     }
     .challenge-tab-btn[data-challenge="people"].active svg { stroke: var(--color-people); }
     .challenge-tab-btn[data-challenge="people"] .progress-bar { background: var(--color-people); }
 
     .challenge-tab-btn[data-challenge="methodology"].active {
       border-color: var(--color-methodology);
-      color: var(--color-methodology);
-      background: #F0FDF4;
-      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.12);
+      color: #FFFFFF;
+      background: rgba(13, 148, 136, 0.15);
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
     }
     .challenge-tab-btn[data-challenge="methodology"].active svg { stroke: var(--color-methodology); }
     .challenge-tab-btn[data-challenge="methodology"] .progress-bar { background: var(--color-methodology); }
 
     .challenge-tab-btn[data-challenge="project"].active {
       border-color: var(--color-project);
-      color: var(--color-project);
-      background: #FFFBEB;
-      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.12);
+      color: #FFFFFF;
+      background: rgba(217, 119, 6, 0.15);
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
     }
     .challenge-tab-btn[data-challenge="project"].active svg { stroke: var(--color-project); }
     .challenge-tab-btn[data-challenge="project"] .progress-bar { background: var(--color-project); }
 
     .challenge-tab-btn[data-challenge="improvement"].active {
       border-color: var(--color-improvement);
-      color: var(--color-improvement);
-      background: #F3E8FF;
-      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+      color: #FFFFFF;
+      background: rgba(124, 58, 237, 0.15);
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
     }
     .challenge-tab-btn[data-challenge="improvement"].active svg { stroke: var(--color-improvement); }
     .challenge-tab-btn[data-challenge="improvement"] .progress-bar { background: var(--color-improvement); }
 
-    /* Timer Bar for Active Tab */
+    /* Timer Bar */
     .challenge-tab-btn .progress-bar {
       position: absolute;
       bottom: 0;
@@ -212,14 +249,14 @@ html_content = """<!DOCTYPE html>
       to { width: 100%; }
     }
 
-    /* Dynamic Border Challenge Display Card */
+    /* Dynamic Border Display Card */
     .challenge-display-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-dark);
       border-left: 6px solid var(--accent);
       border-radius: 12px;
       padding: 2.75rem;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
       text-align: left;
       transition: border-color 0.3s ease;
     }
@@ -244,7 +281,6 @@ html_content = """<!DOCTYPE html>
       width: 54px;
       height: 54px;
       border-radius: 12px;
-      background: #E0F2FE;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -253,12 +289,11 @@ html_content = """<!DOCTYPE html>
 
     .challenge-panel h3 {
       font-size: 1.75rem;
-      color: var(--primary);
+      color: #FFFFFF;
       margin: 0;
       font-weight: 700;
     }
 
-    /* Structured Points List Matching Presentation Style */
     .challenge-points {
       list-style: none;
       display: flex;
@@ -270,7 +305,7 @@ html_content = """<!DOCTYPE html>
       position: relative;
       padding-left: 1.75rem;
       font-size: 1.15rem;
-      color: #334155;
+      color: var(--text-muted);
       line-height: 1.6;
     }
 
@@ -295,12 +330,32 @@ html_content = """<!DOCTYPE html>
     }
 
     /* Contact Section */
-    .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; background: var(--bg-light); padding: 3.5rem; border-radius: 16px; width: 100%; }
-    .contact-info p { margin-bottom: 1.25rem; font-size: 1.05rem; }
-    .contact-info strong { color: var(--primary); }
+    .contact-container { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 2rem; 
+      background: var(--primary-card); 
+      border: 1px solid var(--border-dark);
+      padding: 3.5rem; 
+      border-radius: 16px; 
+      width: 100%; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .contact-info p { margin-bottom: 1.25rem; font-size: 1.05rem; color: var(--text-muted); }
+    .contact-info strong { color: #FFFFFF; }
+    .contact-info a { color: var(--accent); text-decoration: none; }
+    .contact-info a:hover { text-decoration: underline; }
 
     /* Footer */
-    footer { text-align: center; padding: 2.5rem 3rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.95rem; margin-top: 4rem; width: 100%; }
+    footer { 
+      text-align: center; 
+      padding: 2.5rem 3rem; 
+      border-top: 1px solid var(--border-dark); 
+      color: var(--text-muted); 
+      font-size: 0.95rem; 
+      background: var(--bg-dark);
+      width: 100%; 
+    }
 
     @media (max-width: 768px) {
       header, section, .hero, .contact-container, .challenges-container { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -347,7 +402,7 @@ html_content = """<!DOCTYPE html>
   </div>
 
   <main>
-    <!-- Vision / Mission / Values Panel Box (Dark Navy Style) -->
+    <!-- Vision / Mission / Values Section -->
     <section id="about">
       <div class="vision-box" id="vision-box">
         <div class="tab-container">
@@ -420,7 +475,7 @@ html_content = """<!DOCTYPE html>
       </div>
     </section>
 
-    <!-- Challenges We Address (Full Screen Width + Presentation Colors & Bullet Points) -->
+    <!-- Challenges We Address Section -->
     <section id="challenges">
       <h2 class="section-title" data-en="Challenges We Address" data-ca="Quins Problemes Hem Detectat?">Challenges We Address</h2>
       
@@ -472,7 +527,7 @@ html_content = """<!DOCTYPE html>
           <!-- People Management -->
           <div id="challenge-people" class="challenge-panel active">
             <div class="challenge-panel-header">
-              <div class="challenge-panel-icon" style="background: #E0F2FE;">
+              <div class="challenge-panel-icon" style="background: rgba(2, 132, 199, 0.15);">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
@@ -499,7 +554,7 @@ html_content = """<!DOCTYPE html>
           <!-- Work Methodology -->
           <div id="challenge-methodology" class="challenge-panel">
             <div class="challenge-panel-header">
-              <div class="challenge-panel-icon" style="background: #E6F4F1;">
+              <div class="challenge-panel-icon" style="background: rgba(13, 148, 136, 0.15);">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
                 </svg>
@@ -525,7 +580,7 @@ html_content = """<!DOCTYPE html>
           <!-- Project Management -->
           <div id="challenge-project" class="challenge-panel">
             <div class="challenge-panel-header">
-              <div class="challenge-panel-icon" style="background: #FEF3C7;">
+              <div class="challenge-panel-icon" style="background: rgba(217, 119, 6, 0.15);">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                   <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -549,7 +604,7 @@ html_content = """<!DOCTYPE html>
           <!-- Continuous Improvement -->
           <div id="challenge-improvement" class="challenge-panel">
             <div class="challenge-panel-header">
-              <div class="challenge-panel-icon" style="background: #F3E8FF;">
+              <div class="challenge-panel-icon" style="background: rgba(124, 58, 237, 0.15);">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                   <polyline points="17 6 23 6 23 12"></polyline>
@@ -593,7 +648,7 @@ html_content = """<!DOCTYPE html>
         <div class="card">
           <h3 data-en="Visual Management" data-ca="Seguiment Visual i Projectes">Visual Management</h3>
           <p data-en="Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately."
-             data-ca="Eines de seguiment visual per sincronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
+             data-ca="Eines de seguiment visual per synchronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
             Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately.
           </p>
         </div>
@@ -622,13 +677,13 @@ html_content = """<!DOCTYPE html>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Lean Service Consulting. All rights reserved.</p>
   </footer>
 
   <!-- Scripts -->
   <script>
-    // Border Accent Map for Display Card
     const categoryColors = {
       people: '#0284C7',
       methodology: '#0D9488',
@@ -636,100 +691,80 @@ html_content = """<!DOCTYPE html>
       improvement: '#7C3AED'
     };
 
-    // --- Vision/Mission/Values Auto Rotator ---
-    const visionTabs = ['vision', 'mission', 'values'];
-    let currentVisionIndex = 0;
-    let visionInterval = null;
-
-    function switchTab(tabId) {
-      currentVisionIndex = visionTabs.indexOf(tabId);
-
-      document.querySelectorAll('#vision-box .tab-panel').forEach(panel => panel.classList.remove('active'));
-      document.querySelectorAll('#vision-box .tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-tab') === tabId) btn.classList.add('active');
-      });
-
-      document.getElementById(`tab-${tabId}`).classList.add('active');
-    }
-
-    function userSelectTab(tabId) {
-      switchTab(tabId);
-      resetVisionAutoRotate();
-    }
-
-    function nextVisionTab() {
-      currentVisionIndex = (currentVisionIndex + 1) % visionTabs.length;
-      switchTab(visionTabs[currentVisionIndex]);
-    }
-
-    function startVisionAutoRotate() { visionInterval = setInterval(nextVisionTab, 5000); }
-    function resetVisionAutoRotate() { clearInterval(visionInterval); startVisionAutoRotate(); }
-
-
-    // --- Challenges Auto Rotator ---
-    const challengeTabs = ['people', 'methodology', 'project', 'improvement'];
-    let currentChallengeIndex = 0;
     let challengeInterval = null;
+    const challengeOrder = ['people', 'methodology', 'project', 'improvement'];
 
-    function switchChallenge(challengeId) {
-      currentChallengeIndex = challengeTabs.indexOf(challengeId);
+    function userSelectTab(tabKey, btnElement) {
+      document.querySelectorAll('#vision-box .tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('#vision-box .tab-panel').forEach(panel => panel.classList.remove('active'));
 
-      document.querySelectorAll('.challenge-panel').forEach(panel => panel.classList.remove('active'));
-      document.querySelectorAll('.challenge-tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-challenge') === challengeId) btn.classList.add('active');
+      btnElement.classList.add('active');
+      const targetPanel = document.getElementById(`tab-${tabKey}`);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    }
+
+    function activateChallenge(challengeKey) {
+      const tabs = document.querySelectorAll('.challenge-tab-btn');
+      const panels = document.querySelectorAll('.challenge-panel');
+      const displayCard = document.getElementById('challenge-display-card');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('data-challenge') === challengeKey) {
+          tab.classList.add('active');
+        }
       });
 
-      // Dynamic Left Accent Border on Main Card
-      const displayCard = document.getElementById('challenge-display-card');
-      if (displayCard && categoryColors[challengeId]) {
-        displayCard.style.borderLeftColor = categoryColors[challengeId];
+      panels.forEach(panel => panel.classList.remove('active'));
+      const activePanel = document.getElementById(`challenge-${challengeKey}`);
+      if (activePanel) {
+        activePanel.classList.add('active');
       }
 
-      document.getElementById(`challenge-${challengeId}`).classList.add('active');
+      if (displayCard && categoryColors[challengeKey]) {
+        displayCard.style.borderLeftColor = categoryColors[challengeKey];
+      }
     }
 
-    function userSelectChallenge(challengeId) {
-      switchChallenge(challengeId);
-      resetChallengeAutoRotate();
+    function userSelectChallenge(challengeKey) {
+      stopChallengeRotation();
+      activateChallenge(challengeKey);
     }
 
-    function nextChallengeTab() {
-      currentChallengeIndex = (currentChallengeIndex + 1) % challengeTabs.length;
-      switchChallenge(challengeTabs[currentChallengeIndex]);
+    function startChallengeRotation() {
+      stopChallengeRotation();
+      let currentIndex = 0;
+      challengeInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % challengeOrder.length;
+        activateChallenge(challengeOrder[currentIndex]);
+      }, 5000);
     }
 
-    function startChallengeAutoRotate() { challengeInterval = setInterval(nextChallengeTab, 5000); }
-    function resetChallengeAutoRotate() { clearInterval(challengeInterval); startChallengeAutoRotate(); }
+    function stopChallengeRotation() {
+      if (challengeInterval) {
+        clearInterval(challengeInterval);
+        challengeInterval = null;
+      }
+    }
 
-
-    // --- Language Switcher ---
     function switchLanguage(lang) {
-      document.querySelectorAll('[data-en]').forEach(el => {
+      document.querySelectorAll('#btn-en, #btn-ca').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-${lang}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
         const text = el.getAttribute(`data-${lang}`);
-        if (text) el.innerHTML = text;
+        if (text) {
+          el.innerHTML = text;
+        }
       });
-
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-ca').classList.toggle('active', lang === 'ca');
-
-      localStorage.setItem('preferred_lang', lang);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('preferred_lang') || 'en';
-      switchLanguage(savedLang);
-      
-      startVisionAutoRotate();
-      startChallengeAutoRotate();
+      startChallengeRotation();
     });
   </script>
 </body>
 </html>
-"""
-
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-print("Updated index.html written successfully.")
