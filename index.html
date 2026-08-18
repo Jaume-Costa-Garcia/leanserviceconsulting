@@ -60,12 +60,38 @@
     /* Layout Sections */
     section { padding: 5rem 0; width: 100%; }
     .section-full-white { background: var(--bg-light); width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+    .section-full-dark { background: var(--bg-dark); width: 100%; }
     .section-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-    .section-title { font-size: 2.25rem; color: var(--text-dark); margin-bottom: 2.5rem; text-align: center; font-weight: 700; }
+    .section-title { font-size: 2.25rem; margin-bottom: 2.5rem; text-align: center; font-weight: 700; }
+    .title-dark { color: var(--text-dark); }
+    .title-light { color: var(--text-light); }
+
+    /* About Us Section */
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.15rem;
+      color: #334155;
+      line-height: 1.8;
+    }
 
     /* Grid Layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-    
+
+    /* Challenge Cards */
+    .challenge-card {
+      background: var(--primary-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .challenge-card h3 { color: var(--text-light); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .challenge-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* Solution Cards */
     .card-link { text-decoration: none; color: inherit; display: block; }
     
     .solution-card {
@@ -116,6 +142,43 @@
       line-height: 1.5;
     }
 
+    /* Contact Section */
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--primary-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-light); font-weight: 600; font-size: 0.9rem; }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-dark);
+      background: #0F172A;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--accent-hover); }
+
     footer {
       text-align: center;
       padding: 2.5rem 3rem;
@@ -126,8 +189,13 @@
       width: 100%;
     }
 
-    @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px) { .grid-4 { grid-template-columns: 1fr; } }
+    @media (max-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .grid-4 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -140,10 +208,10 @@
     
     <div class="nav-links">
       <ul class="nav-menu">
-        <li><a href="index.html#about" data-en="About Us" data-ca="Sobre Nosaltres">About Us</a></li>
-        <li><a href="index.html#challenges" data-en="Challenges" data-ca="Reptes">Challenges</a></li>
-        <li><a href="index.html#solutions" data-en="Solutions" data-ca="Solucions">Solutions</a></li>
-        <li><a href="index.html#contact" data-en="Get in Touch" data-ca="Contacte">Get in Touch</a></li>
+        <li><a href="#about" data-en="About Us" data-ca="Sobre Nosaltres">About Us</a></li>
+        <li><a href="#challenges" data-en="Challenges" data-ca="Reptes">Challenges</a></li>
+        <li><a href="#solutions" data-en="Solutions" data-ca="Solucions">Solutions</a></li>
+        <li><a href="#contact" data-en="Get in Touch" data-ca="Contacte">Get in Touch</a></li>
       </ul>
       <div class="lang-toggle">
         <button id="btn-en" onclick="switchLanguage('en')" class="active">EN</button>
@@ -154,10 +222,61 @@
   </header>
 
   <main>
-    <!-- Solutions Section -->
+
+    <!-- 1. About Us Section -->
+    <section id="about" class="section-full-white">
+      <div class="section-container">
+        <h2 class="section-title title-dark" data-en="About Us" data-ca="Sobre Nosaltres">About Us</h2>
+        <div class="about-content">
+          <p data-en="We bridge continuous improvement methodologies from traditional industrial operations to service-oriented organizations. By streamlining workflows, establishing clear role visibility, and embedding lean principles, we empower teams to drive operational excellence."
+             data-ca="Connectem les metodologies de millora contínua de les operacions industrials tradicionals amb les organitzacions de serveis. Mitjançant l'optimització de fluxos de treball, l'establiment de rols clars i la gestió visual, ajudem a assolir l'excel·lència operacional.">
+            We bridge continuous improvement methodologies from traditional industrial operations to service-oriented organizations. By streamlining workflows, establishing clear role visibility, and embedding lean principles, we empower teams to drive operational excellence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Challenges We Address Section -->
+    <section id="challenges" class="section-full-dark">
+      <div class="section-container">
+        <h2 class="section-title title-light" data-en="Challenges We Address" data-ca="Reptes que Resolem">Challenges We Address</h2>
+        <div class="grid-2">
+          <div class="challenge-card">
+            <h3 data-en="Unclear Roles & Overlapping Responsibilities" data-ca="Manca de Claredat en Rols i Responsabilitats">Unclear Roles & Overlapping Responsibilities</h3>
+            <p data-en="Ambiguity in job functions leads to bottlenecks, duplicated tasks, and reduced operational agility."
+               data-ca="La la manca de definició en les funcions genera colls d'ampolla, tasques duplicades i pèrdua d'agilitat.">
+              Ambiguity in job functions leads to bottlenecks, duplicated tasks, and reduced operational agility.
+            </p>
+          </div>
+          <div class="challenge-card">
+            <h3 data-en="Inconsistent Process Execution" data-ca="Execució Inconstant dels Processos">Inconsistent Process Execution</h3>
+            <p data-en="Lack of standardized work causes variability in deliverable quality and team productivity."
+               data-ca="La falta de procediments estàndard provoca variabilitat en la qualitat i la productivitat.">
+              Lack of standardized work causes variability in deliverable quality and team productivity.
+            </p>
+          </div>
+          <div class="challenge-card">
+            <h3 data-en="Low Operational Visibility" data-ca="Baixa Visibilitat Operativa">Low Operational Visibility</h3>
+            <p data-en="Without clear visual tracking, teams struggle to identify delays and measure overall workflow performance."
+               data-ca="Sense un seguiment visual clar, els equips tenen dificultats per identificar retards i mesurar el rendiment.">
+              Without clear visual tracking, teams struggle to identify delays and measure overall workflow performance.
+            </p>
+          </div>
+          <div class="challenge-card">
+            <h3 data-en="Absence of Structured Improvement" data-ca="Manca de Millora Estructurada">Absence of Structured Improvement</h3>
+            <p data-en="Without formal kaizen and problem-solving mechanisms, operational issues remain recurring."
+               data-ca="Sense mecanismes formals de resolució de problemes, els errors operatius es repeteixen de manera sistemàtica.">
+              Without formal kaizen and problem-solving mechanisms, operational issues remain recurring.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Solutions Section -->
     <section id="solutions" class="section-full-white">
       <div class="section-container">
-        <h2 class="section-title" data-en="Solutions" data-ca="Solucions">Solutions</h2>
+        <h2 class="section-title title-dark" data-en="Solutions" data-ca="Solucions">Solutions</h2>
         
         <div class="grid-4">
           
@@ -214,6 +333,31 @@
         </div>
       </div>
     </section>
+
+    <!-- 4. Get in Touch / Contact Section -->
+    <section id="contact" class="section-full-dark">
+      <div class="section-container">
+        <h2 class="section-title title-light" data-en="Get in Touch" data-ca="Contacte">Get in Touch</h2>
+        <div class="contact-container">
+          <form action="#" method="post" onsubmit="event.preventDefault(); alert('Message sent!');">
+            <div class="form-group">
+              <label for="name" data-en="Full Name" data-ca="Nom i Cognoms">Full Name</label>
+              <input type="text" id="name" required placeholder="John Doe" />
+            </div>
+            <div class="form-group">
+              <label for="email" data-en="Email Address" data-ca="Correu Electrònic">Email Address</label>
+              <input type="email" id="email" required placeholder="john@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="message" data-en="Message" data-ca="Missatge">Message</label>
+              <textarea id="message" required placeholder="How can we help your organization?"></textarea>
+            </div>
+            <button type="submit" class="submit-btn" data-en="Send Message" data-ca="Enviar Missatge">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
