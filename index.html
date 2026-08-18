@@ -9,6 +9,7 @@
       --primary: #0F172A;
       --accent: #0284C7;
       --accent-hover: #0369A1;
+      --orange-text: #F97316; /* Energetic professional orange for tab text */
       --bg-light: #F8FAFC;
       --card-bg: #FFFFFF;
       --text: #334155;
@@ -68,11 +69,11 @@
     .tab-btn {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #94A3B8;
+      color: var(--orange-text); /* Orange text color */
       padding: 0.65rem 1.4rem;
       border-radius: 30px;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
       display: inline-flex;
       align-items: center;
@@ -82,16 +83,17 @@
 
     .tab-btn svg {
       transition: stroke 0.3s ease;
+      stroke: #94A3B8;
     }
 
     .tab-btn:hover {
       background: rgba(255, 255, 255, 0.18);
-      color: #FFF;
+      color: var(--orange-text);
     }
 
     .tab-btn.active {
-      background: var(--accent);
-      color: #FFF;
+      background: var(--accent); /* Retained original blue accent background */
+      color: var(--orange-text); /* Orange text on active state */
       border-color: var(--accent);
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
     }
@@ -121,8 +123,9 @@
       border: 1px solid rgba(2, 132, 199, 0.25);
     }
 
-    .tab-panel h2 { color: #FFF; margin-bottom: 1rem; }
-    .tab-panel p { color: #94A3B8; font-size: 1.15rem; max-width: 750px; margin: 0 auto; line-height: 1.7; }
+    .tab-panel h2 { color: #FFF; margin-bottom: 1rem; font-size: 1.6rem; }
+    .tab-panel p { color: #94A3B8; font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.7; }
+    .tab-panel p strong { color: #F8FAFC; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
@@ -168,7 +171,7 @@
     </div>
   </header>
 
-  <!-- Hero Section (Dark Slate Navy) -->
+  <!-- Hero Section -->
   <div class="hero">
     <div class="hero-content">
       <h1 data-en="Operational Excellence Experts" 
@@ -183,7 +186,7 @@
   </div>
 
   <main>
-    <!-- Vision / Mission / Values Section with Auto-Rotator & SVG Icons -->
+    <!-- Vision / Mission / Values Panel Box -->
     <section id="about">
       <div class="vision-box" id="vision-box">
         <div class="tab-container">
@@ -223,10 +226,13 @@
               <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
             </svg>
           </div>
-          <h2 data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</h2>
-          <p data-en="Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations."
-             data-ca="Estendre l’aplicació de les metodologies Lean més enllà de les grans empreses industrials i ajudar a crear organitzacions resilients, eficients i adaptables.">
-            Extend the application of Lean methodologies beyond traditional manufacturing to create resilient, efficient, and adaptable service organizations.
+          <h2 data-en="Universal Operational Excellence" 
+              data-ca="Excel·lència Operativa Universal">
+            Universal Operational Excellence
+          </h2>
+          <p data-en="Our vision is <strong>to extend the application of Lean methodologies</strong> beyond large industrial companies and help <strong>create resilient, efficient and adaptable organizations.</strong>"
+             data-ca="La nostra visió és <strong>estendre l’aplicació de les metodologies Lean</strong> més enllà de les grans empreses industrials i ajudar a <strong>crear organitzacions resilients, eficients i adaptables.</strong>">
+            Our vision is <strong>to extend the application of Lean methodologies</strong> beyond large industrial companies and help <strong>create resilient, efficient and adaptable organizations.</strong>
           </p>
         </div>
 
@@ -239,10 +245,13 @@
               <circle cx="12" cy="12" r="2"></circle>
             </svg>
           </div>
-          <h2 data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</h2>
-          <p data-en="Empower service businesses to achieve operational excellence through standardized workflows, clear organizational roles, and continuous improvement culture."
-             data-ca="Acompanyar les empreses de serveis cap a l'excel·lència operativa mitjançant la millora de processos, la claretat organitzativa i la cultura de millora contínua.">
-            Empower service businesses to achieve operational excellence through standardized workflows, clear organizational roles, and continuous improvement culture.
+          <h2 data-en="Building stronger and more efficient organizations" 
+              data-ca="Construint organitzacions més fortes i eficients">
+            Building stronger and more efficient organizations
+          </h2>
+          <p data-en="We accompany companies and organizations in their operational transformation, optimizing their processes to <strong>maximize the value delivered</strong> to the customer, <strong>reduce operating costs</strong>, <strong>save resources</strong> and <strong>increase revenue.</strong>"
+             data-ca="Acompanyem les empreses i organitzacions en la seva transformació operativa, optimitzant els seus processos per <strong>maximitzar el valor lliurat</strong> al client, <strong>reduir els costos operatius</strong>, <strong>estalviar recursos</strong> i <strong>incrementar els ingressos.</strong>">
+            We accompany companies and organizations in their operational transformation, optimizing their processes to <strong>maximize the value delivered</strong> to the customer, <strong>reduce operating costs</strong>, <strong>save resources</strong> and <strong>increase revenue.</strong>
           </p>
         </div>
 
@@ -253,10 +262,13 @@
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
           </div>
-          <h2 data-en="Our Values" data-ca="Els Nostres Valors">Our Values</h2>
-          <p data-en="Operational Excellence • Transparency & Alignment • Continuous Improvement • People Empowerment"
-             data-ca="Excel·lència Operativa • Transparència i Alineació • Millora Contínua • Capacitació de les Persones">
-            Operational Excellence • Transparency & Alignment • Continuous Improvement • People Empowerment
+          <h2 data-en="People at the center and continuous improvement as a mindset" 
+              data-ca="Les persones al centre i la millora contínua com a mentalitat">
+            People at the center and continuous improvement as a mindset
+          </h2>
+          <p data-en="The most important element of any organization is its <strong>team</strong> and the work it carries out, every day, to <strong>be better tomorrow.</strong>"
+             data-ca="L'element més important de qualsevol organització és el seu <strong>equip</strong> i la feina que duu a terme, cada dia, per <strong>ser millor demà.</strong>">
+            The most important element of any organization is its <strong>team</strong> and the work it carries out, every day, to <strong>be better tomorrow.</strong>
           </p>
         </div>
       </div>
@@ -318,7 +330,7 @@
         <div class="card">
           <h3 data-en="Visual Management" data-ca="Seguiment Visual i Projectes">Visual Management</h3>
           <p data-en="Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately."
-             data-ca="Eines de seguiment visual per sincronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
+             data-ca="Eines de seguiment visual per synchronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
             Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately.
           </p>
         </div>
@@ -359,7 +371,10 @@
 
     function switchLanguage(lang) {
       document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          el.innerHTML = text; // innerHTML used to retain inner <strong> tags
+        }
       });
 
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
