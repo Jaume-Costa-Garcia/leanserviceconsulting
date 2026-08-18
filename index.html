@@ -9,7 +9,6 @@
       --primary: #0F172A;
       --accent: #0284C7;
       --accent-hover: #0369A1;
-      --orange-text: #F97316; /* Energetic professional orange for tab text */
       --bg-light: #F8FAFC;
       --card-bg: #FFFFFF;
       --text: #334155;
@@ -69,11 +68,11 @@
     .tab-btn {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      color: var(--orange-text); /* Orange text color */
+      color: #FFFFFF; /* Restored to clean white text */
       padding: 0.65rem 1.4rem;
       border-radius: 30px;
       cursor: pointer;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 0.95rem;
       display: inline-flex;
       align-items: center;
@@ -88,12 +87,12 @@
 
     .tab-btn:hover {
       background: rgba(255, 255, 255, 0.18);
-      color: var(--orange-text);
+      color: #FFFFFF;
     }
 
     .tab-btn.active {
-      background: var(--accent); /* Retained original blue accent background */
-      color: var(--orange-text); /* Orange text on active state */
+      background: var(--accent);
+      color: #FFFFFF;
       border-color: var(--accent);
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
     }
@@ -373,7 +372,7 @@
       document.querySelectorAll('[data-en]').forEach(el => {
         const text = el.getAttribute(`data-${lang}`);
         if (text) {
-          el.innerHTML = text; // innerHTML used to retain inner <strong> tags
+          el.innerHTML = text;
         }
       });
 
@@ -402,7 +401,7 @@
 
     function userSelectTab(tabId) {
       switchTab(tabId);
-      resetAutoRotate(); // Reset timer on manual user click
+      resetAutoRotate();
     }
 
     function nextTab() {
@@ -411,7 +410,7 @@
     }
 
     function startAutoRotate() {
-      autoRotateInterval = setInterval(nextTab, 5000); // Rotates every 5 seconds
+      autoRotateInterval = setInterval(nextTab, 5000);
     }
 
     function resetAutoRotate() {
@@ -423,7 +422,6 @@
       const savedLang = localStorage.getItem('preferred_lang') || 'en';
       switchLanguage(savedLang);
       
-      // Start 5-second automatic rotation
       startAutoRotate();
     });
   </script>
