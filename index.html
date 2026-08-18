@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -14,14 +14,20 @@
       --text: #334155;
       --text-muted: #64748B;
       --border: #E2E8F0;
+
+      /* Vibrant Category Colors matching presentation style */
+      --color-people: #0284C7;       /* Vibrant Sky/Blue */
+      --color-methodology: #0D9488;  /* Teal/Emerald */
+      --color-project: #D97706;      /* Amber/Orange */
+      --color-improvement: #7C3AED;  /* Vibrant Purple */
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: #FFFFFF; line-height: 1.6; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: #FFFFFF; line-height: 1.6; width: 100%; overflow-x: hidden; }
 
-    /* Header & Navigation */
-    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #FFF; z-index: 100; flex-wrap: wrap; gap: 1rem; }
+    /* Header & Navigation - Full Width */
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 3rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #FFF; z-index: 100; width: 100%; }
     .brand-container { display: flex; align-items: center; text-decoration: none; }
     .brand-logo { height: 40px; width: auto; object-fit: contain; }
     
@@ -34,28 +40,28 @@
     .lang-toggle button { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; }
     .lang-toggle button.active { color: var(--accent); background: #E0F2FE; }
 
-    /* Layout Sections */
-    section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+    /* Layout Sections - Full Width Container */
+    section { padding: 4rem 3rem; width: 100%; max-width: 100%; }
     
     /* Hero Section */
     .hero { 
       text-align: center; 
-      padding: 6rem 2rem; 
+      padding: 6rem 3rem; 
       background: #0F172A; 
-      max-width: 100%; 
+      width: 100%; 
     }
-    .hero-content { max-width: 800px; margin: 0 auto; }
-    .hero h1 { font-size: 2.75rem; color: #FFFFFF; margin-bottom: 1.25rem; line-height: 1.2; }
-    .hero p { font-size: 1.2rem; color: #94A3B8; margin-bottom: 0; line-height: 1.7; }
+    .hero-content { max-width: 1000px; margin: 0 auto; }
+    .hero h1 { font-size: 3rem; color: #FFFFFF; margin-bottom: 1.25rem; line-height: 1.2; font-weight: 700; }
+    .hero p { font-size: 1.25rem; color: #94A3B8; margin-bottom: 0; line-height: 1.7; }
 
     /* General Grid & Section Titles */
-    .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 2rem; text-align: center; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.75rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-    .card h3 { color: var(--primary); margin-bottom: 0.75rem; }
+    .section-title { font-size: 2.25rem; color: var(--primary); margin-bottom: 2.5rem; text-align: center; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; width: 100%; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.25rem; }
 
     /* Dark Panel Box (Vision/Mission/Values) */
-    .vision-box { background: var(--primary); color: #FFF; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin-bottom: 4rem; }
+    .vision-box { background: var(--primary); color: #FFF; padding: 3.5rem 3rem; border-radius: 16px; text-align: center; margin-bottom: 2rem; width: 100%; }
     
     .tab-container {
       display: flex;
@@ -69,11 +75,11 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: #FFFFFF;
-      padding: 0.65rem 1.4rem;
+      padding: 0.75rem 1.6rem;
       border-radius: 30px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 1rem;
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
@@ -100,44 +106,44 @@
       border: 1px solid rgba(2, 132, 199, 0.25);
     }
 
-    .tab-panel h2 { color: #FFF; margin-bottom: 1rem; font-size: 1.6rem; }
-    .tab-panel p { color: #94A3B8; font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.7; }
+    .tab-panel h2 { color: #FFF; margin-bottom: 1rem; font-size: 1.8rem; }
+    .tab-panel p { color: #94A3B8; font-size: 1.2rem; max-width: 900px; margin: 0 auto; line-height: 1.7; }
     .tab-panel p strong { color: #F8FAFC; }
 
-    /* ==========================================
-       LIGHT CHALLENGES SHOWCASE (New Styling)
-       ========================================== */
+    /* VIBRANT FULL-WIDTH CHALLENGES SHOWCASE */
     .challenges-container {
       background: #F8FAFC;
       border: 1px solid #E2E8F0;
       border-radius: 16px;
-      padding: 3rem 2rem;
+      padding: 3rem;
       box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+      width: 100%;
     }
 
     .challenge-tabs {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
       margin-bottom: 2rem;
+      width: 100%;
     }
 
     .challenge-tab-btn {
       background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      padding: 1rem 1.25rem;
-      border-radius: 10px;
+      border: 1.5px solid #E2E8F0;
+      padding: 1.2rem 1.25rem;
+      border-radius: 12px;
       cursor: pointer;
       text-align: left;
       font-weight: 600;
-      font-size: 0.95rem;
-      color: #64748B;
+      font-size: 1rem;
+      color: #475569;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
     }
 
     .challenge-tab-btn svg {
@@ -151,24 +157,49 @@
       color: var(--primary);
     }
 
-    .challenge-tab-btn.active {
-      background: #FFFFFF;
-      border-color: var(--accent);
-      color: var(--accent);
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
+    /* Vibrant Active Tab State Specifics */
+    .challenge-tab-btn[data-challenge="people"].active {
+      border-color: var(--color-people);
+      color: var(--color-people);
+      background: #F0F9FF;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.12);
     }
+    .challenge-tab-btn[data-challenge="people"].active svg { stroke: var(--color-people); }
+    .challenge-tab-btn[data-challenge="people"] .progress-bar { background: var(--color-people); }
 
-    .challenge-tab-btn.active svg {
-      stroke: var(--accent);
+    .challenge-tab-btn[data-challenge="methodology"].active {
+      border-color: var(--color-methodology);
+      color: var(--color-methodology);
+      background: #F0FDF4;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.12);
     }
+    .challenge-tab-btn[data-challenge="methodology"].active svg { stroke: var(--color-methodology); }
+    .challenge-tab-btn[data-challenge="methodology"] .progress-bar { background: var(--color-methodology); }
+
+    .challenge-tab-btn[data-challenge="project"].active {
+      border-color: var(--color-project);
+      color: var(--color-project);
+      background: #FFFBEB;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.12);
+    }
+    .challenge-tab-btn[data-challenge="project"].active svg { stroke: var(--color-project); }
+    .challenge-tab-btn[data-challenge="project"] .progress-bar { background: var(--color-project); }
+
+    .challenge-tab-btn[data-challenge="improvement"].active {
+      border-color: var(--color-improvement);
+      color: var(--color-improvement);
+      background: #F3E8FF;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+    }
+    .challenge-tab-btn[data-challenge="improvement"].active svg { stroke: var(--color-improvement); }
+    .challenge-tab-btn[data-challenge="improvement"] .progress-bar { background: var(--color-improvement); }
 
     /* Timer Bar for Active Tab */
     .challenge-tab-btn .progress-bar {
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 3px;
-      background: var(--accent);
+      height: 4px;
       width: 0%;
     }
 
@@ -181,15 +212,16 @@
       to { width: 100%; }
     }
 
-    /* Challenge Display Card */
+    /* Dynamic Border Challenge Display Card */
     .challenge-display-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-left: 5px solid var(--accent);
+      border-left: 6px solid var(--accent);
       border-radius: 12px;
-      padding: 2.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      padding: 2.75rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
       text-align: left;
+      transition: border-color 0.3s ease;
     }
 
     .challenge-panel {
@@ -204,35 +236,58 @@
     .challenge-panel-header {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
     }
 
     .challenge-panel-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
       background: #E0F2FE;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .challenge-panel-icon svg {
-      stroke: var(--accent);
+      flex-shrink: 0;
     }
 
     .challenge-panel h3 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       color: var(--primary);
       margin: 0;
+      font-weight: 700;
     }
 
-    .challenge-panel p {
-      color: #475569;
-      font-size: 1.1rem;
-      line-height: 1.7;
+    /* Structured Points List Matching Presentation Style */
+    .challenge-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
+
+    .challenge-points li {
+      position: relative;
+      padding-left: 1.75rem;
+      font-size: 1.15rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .challenge-points li::before {
+      content: "•";
+      position: absolute;
+      left: 0.5rem;
+      top: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+      font-weight: bold;
+    }
+
+    #challenge-people .challenge-points li::before { color: var(--color-people); }
+    #challenge-methodology .challenge-points li::before { color: var(--color-methodology); }
+    #challenge-project .challenge-points li::before { color: var(--color-project); }
+    #challenge-improvement .challenge-points li::before { color: var(--color-improvement); }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
@@ -240,18 +295,16 @@
     }
 
     /* Contact Section */
-    .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; background: var(--bg-light); padding: 3rem; border-radius: 12px; }
-    .contact-info p { margin-bottom: 1rem; }
+    .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; background: var(--bg-light); padding: 3.5rem; border-radius: 16px; width: 100%; }
+    .contact-info p { margin-bottom: 1.25rem; font-size: 1.05rem; }
     .contact-info strong { color: var(--primary); }
 
     /* Footer */
-    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
+    footer { text-align: center; padding: 2.5rem 3rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.95rem; margin-top: 4rem; width: 100%; }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      section { padding: 2.5rem 1rem; }
-      header { justify-content: center; text-align: center; }
-      .nav-links { flex-direction: column; gap: 0.75rem; }
+      header, section, .hero, .contact-container, .challenges-container { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .hero h1 { font-size: 2.25rem; }
       .challenge-tabs { grid-template-columns: 1fr; }
     }
   </style>
@@ -367,15 +420,15 @@
       </div>
     </section>
 
-    <!-- NEW: Challenges We Address (Light Slate Carousel with Progress Indicators) -->
+    <!-- Challenges We Address (Full Screen Width + Presentation Colors & Bullet Points) -->
     <section id="challenges">
-      <h2 class="section-title" data-en="Challenges We Address" data-ca="Quins Problemes Detectem?">Challenges We Address</h2>
+      <h2 class="section-title" data-en="Challenges We Address" data-ca="Quins Problemes Hem Detectat?">Challenges We Address</h2>
       
       <div class="challenges-container">
-        <!-- 4 Interactive Tabs with Progress Bars -->
+        <!-- Interactive Tabs -->
         <div class="challenge-tabs">
           <button class="challenge-tab-btn active" data-challenge="people" onclick="userSelectChallenge('people', this)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
               <circle cx="9" cy="7" r="4"></circle>
               <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -386,7 +439,7 @@
           </button>
 
           <button class="challenge-tab-btn" data-challenge="methodology" onclick="userSelectChallenge('methodology', this)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
             </svg>
             <span data-en="Work Methodology" data-ca="Metodologia de Treball">Work Methodology</span>
@@ -394,7 +447,7 @@
           </button>
 
           <button class="challenge-tab-btn" data-challenge="project" onclick="userSelectChallenge('project', this)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
               <line x1="16" y1="2" x2="16" y2="6"></line>
               <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -405,7 +458,7 @@
           </button>
 
           <button class="challenge-tab-btn" data-challenge="improvement" onclick="userSelectChallenge('improvement', this)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
               <polyline points="17 6 23 6 23 12"></polyline>
             </svg>
@@ -415,45 +468,65 @@
         </div>
 
         <!-- Display Area Panel -->
-        <div class="challenge-display-card">
+        <div class="challenge-display-card" id="challenge-display-card">
           <!-- People Management -->
           <div id="challenge-people" class="challenge-panel active">
             <div class="challenge-panel-header">
-              <div class="challenge-panel-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="challenge-panel-icon" style="background: #E0F2FE;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
                 </svg>
               </div>
               <h3 data-en="People Management" data-ca="Gestió de Persones">People Management</h3>
             </div>
-            <p data-en="Unclear role responsibilities leading to unresolved conflicts, uneven workloads, and cross-orders that delay tasks."
-               data-ca="Conflictes sense gestionar per falta de claretat en les responsabilitats, càrregues de treball desequilibrades i ordres creuades que retraceixen les tasques.">
-              Unclear role responsibilities leading to unresolved conflicts, uneven workloads, and cross-orders that delay tasks.
-            </p>
+            <ul class="challenge-points">
+              <li data-en="Unresolved conflicts arise because accountability and responsibilities are not clearly defined."
+                  data-ca="Sorgeix un conflicte i no s’afronta perquè la responsabilitat de qui l’ha de gestionar no està clara.">
+                Unresolved conflicts arise because accountability and responsibilities are not clearly defined.
+              </li>
+              <li data-en="Uneven workloads leave some team members overwhelmed for weeks while others have significantly lighter capacity."
+                  data-ca="Un treballador saturat durant setmanes completes i un treballador amb una càrrega de travail molt inferior.">
+                Uneven workloads leave some team members overwhelmed for weeks while others have significantly lighter capacity.
+              </li>
+              <li data-en="Conflicting orders between team members cause confusion and delay task completion."
+                  data-ca="Ordres creuades entre treballadors que generen confusió i un retràs en la finalització de les tasques.">
+                Conflicting orders between team members cause confusion and delay task completion.
+              </li>
+            </ul>
           </div>
 
           <!-- Work Methodology -->
           <div id="challenge-methodology" class="challenge-panel">
             <div class="challenge-panel-header">
-              <div class="challenge-panel-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="challenge-panel-icon" style="background: #E6F4F1;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
                 </svg>
               </div>
               <h3 data-en="Work Methodology" data-ca="Metodologia de Treball">Work Methodology</h3>
             </div>
-            <p data-en="Inconsistent project structures, lack of brand identity, repeat operational mistakes, and highly variable task completion times."
-               data-ca="Inconsistència en formats i estructures, falta d'identitat, errors repetits i variabilitat excessiva en el temps d'execució.">
-              Inconsistent project structures, lack of brand identity, repeat operational mistakes, and highly variable task completion times.
-            </p>
+            <ul class="challenge-points">
+              <li data-en="Deliverables and projects lack consistent formats and structures, diluting brand identity."
+                  data-ca="L’empresa presenta un mateix projecte, producte o servei amb formats i estructures diferents. L’empresa no té una identitat.">
+                Deliverables and projects lack consistent formats and structures, diluting brand identity.
+              </li>
+              <li data-en="Employees repeat operational mistakes previously encountered and solved by colleagues."
+                  data-ca="El treballador comet errors que un company ja ha afrontat i solucionat en el passat.">
+                Employees repeat operational mistakes previously encountered and solved by colleagues.
+              </li>
+              <li data-en="Highly variable task completion times, where identical tasks take hours for one person and a full week for another."
+                  data-ca="Una mateixa tasca pot suposar només unes hores de feina o encallades d’una setmana completa.">
+                Highly variable task completion times, where identical tasks take hours for one person and a full week for another.
+              </li>
+            </ul>
           </div>
 
           <!-- Project Management -->
           <div id="challenge-project" class="challenge-panel">
             <div class="challenge-panel-header">
-              <div class="challenge-panel-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="challenge-panel-icon" style="background: #FEF3C7;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                   <line x1="16" y1="2" x2="16" y2="6"></line>
                   <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -461,27 +534,39 @@
               </div>
               <h3 data-en="Project Management" data-ca="Gestió de Projectes">Project Management</h3>
             </div>
-            <p data-en="Competing priorities caused by poor forecasting, along with information bottlenecks that slow down decision-making."
-               data-ca="Prioritats contrapostes per falta de planificació i falta d'informació clara per escollir tasques prioritàries.">
-              Competing priorities caused by poor forecasting, along with information bottlenecks that slow down decision-making.
-            </p>
+            <ul class="challenge-points">
+              <li data-en="Competing top priorities caused by poor capacity planning and lack of forecasting."
+                  data-ca="Treballadors amb dues tasques prioritàries al mateix moment al no haver previst la situació amb anterioritat.">
+                Competing top priorities caused by poor capacity planning and lack of forecasting.
+              </li>
+              <li data-en="Information bottlenecks leave staff uncertain about priority tasks, triggering delays and decision errors."
+                  data-ca="Falta d’informació pels treballadors alhora d’escollir tasques prioritàries, provocant errors o retards en la decisió.">
+                Information bottlenecks leave staff uncertain about priority tasks, triggering delays and decision errors.
+              </li>
+            </ul>
           </div>
 
           <!-- Continuous Improvement -->
           <div id="challenge-improvement" class="challenge-panel">
             <div class="challenge-panel-header">
-              <div class="challenge-panel-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="challenge-panel-icon" style="background: #F3E8FF;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                   <polyline points="17 6 23 6 23 12"></polyline>
                 </svg>
               </div>
               <h3 data-en="Continuous Improvement" data-ca="Millora Contínua">Continuous Improvement</h3>
             </div>
-            <p data-en="Lack of initiative when facing problems and minimal daily time dedicated to optimizing routine workflows."
-               data-ca="Falta d'iniciativa davant dels problemes i una mínima part de la jornada dedicada a millorar les tasques diàries.">
-              Lack of initiative when facing problems and minimal daily time dedicated to optimizing routine workflows.
-            </p>
+            <ul class="challenge-points">
+              <li data-en="Lack of initiative and proactive problem-solving frameworks across teams."
+                  data-ca="Falta d’idees i d’iniciativa per part dels treballadors alhora d’afrontar problemes.">
+                Lack of initiative and proactive problem-solving frameworks across teams.
+              </li>
+              <li data-en="Minimal daily time invested in optimizing workflows to improve future operational performance."
+                  data-ca="Destinem una mínima part de la jornada laboral a millorar les tasques del nostre dia a dia per treballar millor en el futur.">
+                Minimal daily time invested in optimizing workflows to improve future operational performance.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -508,7 +593,7 @@
         <div class="card">
           <h3 data-en="Visual Management" data-ca="Seguiment Visual i Projectes">Visual Management</h3>
           <p data-en="Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately."
-             data-ca="Eines de seguiment visual per synchronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
+             data-ca="Eines de seguiment visual per sincronitzar l'equip amb les prioritats estratègiques i reaccionar davant d'incidències.">
             Implement visual tracking tools to synchronize teams with strategic priorities and resolve incidents immediately.
           </p>
         </div>
@@ -543,6 +628,14 @@
 
   <!-- Scripts -->
   <script>
+    // Border Accent Map for Display Card
+    const categoryColors = {
+      people: '#0284C7',
+      methodology: '#0D9488',
+      project: '#D97706',
+      improvement: '#7C3AED'
+    };
+
     // --- Vision/Mission/Values Auto Rotator ---
     const visionTabs = ['vision', 'mission', 'values'];
     let currentVisionIndex = 0;
@@ -588,6 +681,12 @@
         if (btn.getAttribute('data-challenge') === challengeId) btn.classList.add('active');
       });
 
+      // Dynamic Left Accent Border on Main Card
+      const displayCard = document.getElementById('challenge-display-card');
+      if (displayCard && categoryColors[challengeId]) {
+        displayCard.style.borderLeftColor = categoryColors[challengeId];
+      }
+
       document.getElementById(`challenge-${challengeId}`).classList.add('active');
     }
 
@@ -628,3 +727,9 @@
   </script>
 </body>
 </html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("Updated index.html written successfully.")
