@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lean Service Consulting</title>
+  <title>Lean Service Consulting | Operational Excellence Experts</title>
   <style>
     :root {
       --primary: #0F172A;
@@ -17,37 +17,43 @@
       --text-muted: #94A3B8;
       --border-dark: rgba(255, 255, 255, 0.12);
       --border-light: #E2E8F0;
+
+      /* Category Accent Colors */
+      --color-people: #0284C7;
+      --color-methodology: #0D9488;
+      --color-project: #D97706;
+      --color-improvement: #7C3AED;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text-light);
-      background: var(--bg-dark);
-      line-height: 1.6;
-      width: 100%;
-      overflow-x: hidden;
+    
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      color: var(--text-light); 
+      background: var(--bg-dark); 
+      line-height: 1.6; 
+      width: 100%; 
+      overflow-x: hidden; 
     }
 
     /* Header & Navigation */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 3rem;
-      border-bottom: 1px solid var(--border-light);
-      position: sticky;
-      top: 0;
-      background: var(--bg-light);
-      z-index: 100;
-      width: 100%;
+    header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 1rem 3rem; 
+      border-bottom: 1px solid var(--border-light); 
+      position: sticky; 
+      top: 0; 
+      background: var(--bg-light); 
+      z-index: 100; 
+      width: 100%; 
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
     .brand-container { display: flex; align-items: center; text-decoration: none; }
     .brand-logo { height: 40px; width: auto; object-fit: contain; }
-
+    
     .nav-links { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
     .nav-menu { display: flex; align-items: center; gap: 1.25rem; list-style: none; }
     .nav-menu a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
@@ -57,81 +63,89 @@
     .lang-toggle button { background: none; border: none; cursor: pointer; color: #64748B; font-size: 0.9rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; transition: all 0.2s; }
     .lang-toggle button.active { color: #FFFFFF; background: var(--accent); }
 
-    /* Layout Sections */
-    section { padding: 5rem 0; width: 100%; }
-    .section-full-white { background: var(--bg-light); width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-    .section-full-dark { background: var(--bg-dark); width: 100%; }
-    .section-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-    .section-title { font-size: 2.25rem; margin-bottom: 2.5rem; text-align: center; font-weight: 700; }
-    .title-dark { color: var(--text-dark); }
-    .title-light { color: var(--text-light); }
+    /* Section Wrapper */
+    section { padding: 3.5rem 0; width: 100%; }
 
-    /* About Us Section */
-    .about-content {
-      max-width: 800px;
+    .section-full-white {
+      background: var(--bg-light);
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-container {
+      width: 100%;
+      max-width: 1200px;
       margin: 0 auto;
-      text-align: center;
-      font-size: 1.15rem;
-      color: #334155;
-      line-height: 1.8;
+      padding: 0 1.5rem;
     }
 
-    /* Grid Layouts */
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-
-    /* Challenge Cards */
-    .challenge-card {
-      background: var(--primary-card);
-      border: 1px solid var(--border-dark);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    .section-full-white .section-title {
+      color: var(--text-dark);
+      margin-bottom: 2.5rem;
     }
-    .challenge-card h3 { color: var(--text-light); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
-    .challenge-card p { color: var(--text-muted); font-size: 0.95rem; }
-
-    /* Solution Cards */
-    .card-link { text-decoration: none; color: inherit; display: block; }
     
+    /* Hero Section */
+    .hero { 
+      text-align: center; 
+      padding: 5rem 1.5rem 2.5rem 1.5rem; 
+      background: var(--bg-dark); 
+      width: 100%; 
+    }
+    .hero-content { max-width: 1000px; margin: 0 auto; }
+    .hero h1 { font-size: 3rem; color: #FFFFFF; margin-bottom: 1.25rem; line-height: 1.2; font-weight: 700; }
+    .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 0; line-height: 1.7; }
+
+    .section-title { font-size: 2.25rem; color: #FFFFFF; margin-bottom: 2.5rem; text-align: center; font-weight: 700; }
+
+    /* SOLUTIONS 4-CARD GRID */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card-link { text-decoration: none; color: inherit; display: block; }
+
     .solution-card {
       background: #F8FAFC;
       border: 1px solid var(--border-light);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      height: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100%;
     }
 
-    .card-link:hover .solution-card {
+    .card-link:hover .solution-card,
+    .solution-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
     .solution-image-container {
       width: 100%;
-      height: 160px;
-      background: #E2E8F0;
-      border-radius: 12px;
-      margin-bottom: 1.25rem;
+      height: 180px;
+      border-radius: 8px;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin-bottom: 1.25rem;
+      background: #E2E8F0;
+      border: 1px solid var(--border-light);
     }
 
     .solution-image-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .solution-card h3 {
       color: var(--text-dark);
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
@@ -142,59 +156,68 @@
       line-height: 1.5;
     }
 
+    /* About Us Box */
+    .vision-box { 
+      background: var(--primary-card); 
+      color: #FFF; 
+      padding: 3.5rem 3rem; 
+      border-radius: 16px; 
+      border: 1px solid var(--border-dark);
+      text-align: center; 
+      width: 100%; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .tab-container { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .tab-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #FFFFFF; padding: 0.75rem 1.6rem; border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.6rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .tab-btn.active { background: var(--accent); color: #FFFFFF; border-color: var(--accent); box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35); }
+    .tab-panel { display: none; animation: fadeIn 0.4s ease-in-out forwards; }
+    .tab-panel.active { display: block; }
+    .tab-panel h2 { color: #FFF; margin-bottom: 1rem; font-size: 1.8rem; }
+    .tab-panel p { color: var(--text-muted); font-size: 1.2rem; max-width: 900px; margin: 0 auto; line-height: 1.7; }
+
+    /* Challenges Box */
+    .challenges-container { background: var(--primary-card); border: 1px solid var(--border-dark); border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); width: 100%; }
+    .challenge-tabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; width: 100%; }
+    .challenge-tab-btn { background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-dark); padding: 1.2rem 1.25rem; border-radius: 12px; cursor: pointer; text-align: left; font-weight: 600; font-size: 1rem; color: var(--text-muted); transition: all 0.3s ease; display: flex; align-items: center; gap: 0.85rem; }
+    .challenge-tab-btn[data-challenge="people"].active { border-color: var(--color-people); color: #FFFFFF; background: rgba(2, 132, 199, 0.15); }
+    .challenge-tab-btn[data-challenge="methodology"].active { border-color: var(--color-methodology); color: #FFFFFF; background: rgba(13, 148, 136, 0.15); }
+    .challenge-tab-btn[data-challenge="project"].active { border-color: var(--color-project); color: #FFFFFF; background: rgba(217, 119, 6, 0.15); }
+    .challenge-tab-btn[data-challenge="improvement"].active { border-color: var(--color-improvement); color: #FFFFFF; background: rgba(124, 58, 237, 0.15); }
+    
+    .challenge-display-card { 
+      background: rgba(255, 255, 255, 0.03); 
+      border: 1px solid var(--border-dark); 
+      border-left: 6px solid var(--color-people); 
+      border-radius: 12px; 
+      padding: 2.75rem; 
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); 
+      text-align: left; 
+      transition: border-left-color 0.3s ease;
+    }
+    
+    .challenge-panel { display: none; animation: fadeIn 0.4s ease-in-out forwards; }
+    .challenge-panel.active { display: block; }
+    .challenge-panel h3 { font-size: 1.75rem; color: #FFFFFF; margin: 0; font-weight: 700; margin-bottom: 1rem; }
+    .challenge-points { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .challenge-points li { position: relative; padding-left: 1.75rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; }
+    .challenge-points li::before { content: "•"; position: absolute; left: 0.5rem; top: 0; font-size: 1.5rem; line-height: 1; font-weight: bold; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
     /* Contact Section */
-    .contact-container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: var(--primary-card);
-      border: 1px solid var(--border-dark);
-      border-radius: 16px;
-      padding: 2.5rem;
-    }
+    .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; background: var(--primary-card); border: 1px solid var(--border-dark); padding: 3.5rem; border-radius: 16px; width: 100%; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+    .contact-info p { margin-bottom: 1.25rem; font-size: 1.05rem; color: var(--text-muted); }
+    .contact-info strong { color: #FFFFFF; }
+    .contact-info a { color: var(--accent); text-decoration: none; }
 
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-light); font-weight: 600; font-size: 0.9rem; }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-dark);
-      background: #0F172A;
-      color: var(--text-light);
-      font-size: 0.95rem;
-    }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-
-    .submit-btn {
-      width: 100%;
-      padding: 0.85rem;
-      border-radius: 8px;
-      border: none;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .submit-btn:hover { background: var(--accent-hover); }
-
-    footer {
-      text-align: center;
-      padding: 2.5rem 3rem;
-      border-top: 1px solid var(--border-dark);
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      background: var(--bg-dark);
-      width: 100%;
-    }
+    footer { text-align: center; padding: 2.5rem 3rem; border-top: 1px solid var(--border-dark); color: var(--text-muted); font-size: 0.95rem; background: var(--bg-dark); width: 100%; }
 
     @media (max-width: 1024px) {
-      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-      .grid-2 { grid-template-columns: 1fr; }
+      .solutions-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 600px) {
-      .grid-4 { grid-template-columns: 1fr; }
+      .solutions-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -202,7 +225,7 @@
 
   <!-- Navigation Header -->
   <header>
-    <a href="index.html" class="brand-container">
+    <a href="#" class="brand-container">
       <img src="logo.png" alt="Lean Service Consulting Logo" class="brand-logo" />
     </a>
     
@@ -221,70 +244,126 @@
     </div>
   </header>
 
-  <main>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1 data-en="Operational Excellence Experts" data-ca="Experts en Excel·lència Operativa">
+        Operational Excellence Experts
+      </h1>
+      <p data-en="At Lean Service Consulting, we empower organizations to achieve sustainable growth by applying tailored Lean methodologies that streamline operations and elevate service quality." 
+         data-ca="A Lean Service Consulting, ajudem a les organitzacions a assolir un creixement sostenible aplicant metodologies Lean a mida que optimitzen les operacions i eleven la qualitat del servei.">
+        At Lean Service Consulting, we empower organizations to achieve sustainable growth by applying tailored Lean methodologies that streamline operations and elevate service quality.
+      </p>
+    </div>
+  </div>
 
-    <!-- 1. About Us Section -->
+  <main>
+    <!-- About Section -->
     <section id="about" class="section-full-white">
       <div class="section-container">
-        <h2 class="section-title title-dark" data-en="About Us" data-ca="Sobre Nosaltres">About Us</h2>
-        <div class="about-content">
-          <p data-en="We bridge continuous improvement methodologies from traditional industrial operations to service-oriented organizations. By streamlining workflows, establishing clear role visibility, and embedding lean principles, we empower teams to drive operational excellence."
-             data-ca="Connectem les metodologies de millora contínua de les operacions industrials tradicionals amb les organitzacions de serveis. Mitjançant l'optimització de fluxos de treball, l'establiment de rols clars i la gestió visual, ajudem a assolir l'excel·lència operacional.">
-            We bridge continuous improvement methodologies from traditional industrial operations to service-oriented organizations. By streamlining workflows, establishing clear role visibility, and embedding lean principles, we empower teams to drive operational excellence.
-          </p>
+        <h2 class="section-title" data-en="About Us" data-ca="Sobre Nosaltres">About Us</h2>
+        <div class="vision-box" id="vision-box">
+          <div class="tab-container">
+            <button class="tab-btn active" data-tab="vision" onclick="userSelectTab('vision', this)">
+              <span data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</span>
+            </button>
+            <button class="tab-btn" data-tab="mission" onclick="userSelectTab('mission', this)">
+              <span data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</span>
+            </button>
+            <button class="tab-btn" data-tab="values" onclick="userSelectTab('values', this)">
+              <span data-en="Our Values" data-ca="Els Nostres Valors">Our Values</span>
+            </button>
+          </div>
+
+          <div id="tab-vision" class="tab-panel active">
+            <h2 data-en="Universal Operational Excellence" data-ca="Excel·lència Operativa Universal">Universal Operational Excellence</h2>
+            <p data-en="Our vision is <strong>to extend the application of Lean methodologies</strong> beyond large industrial companies and help <strong>create resilient, efficient and adaptable organizations.</strong>"
+               data-ca="La nostra visió és <strong>estendre l’aplicació de les metodologies Lean</strong> més enllà de les grans empreses industrials i ajudar a <strong>crear organitzacions resilients, eficients i adaptables.</strong>">
+              Our vision is <strong>to extend the application of Lean methodologies</strong> beyond large industrial companies and help <strong>create resilient, efficient and adaptable organizations.</strong>
+            </p>
+          </div>
+          <div id="tab-mission" class="tab-panel">
+            <h2 data-en="Building stronger and more efficient organizations" data-ca="Construint organitzacions més fortes i eficients">Building stronger and more efficient organizations</h2>
+            <p data-en="We accompany companies in their operational transformation, optimizing processes to maximize value and save resources."
+               data-ca="Acompanyem les empreses en la seva transformació operativa, optimitzant processos per maximitzar el valor i estalviar recursos.">
+              We accompany companies in their operational transformation, optimizing processes to maximize value and save resources.
+            </p>
+          </div>
+          <div id="tab-values" class="tab-panel">
+            <h2 data-en="People at the center" data-ca="Les persones al centre">People at the center</h2>
+            <p data-en="The most important element of any organization is its team and the work it carries out every day."
+               data-ca="L'element més important de qualsevol organització és el seu equip i la feina que duu a terme cada dia.">
+              The most important element of any organization is its team and the work it carries out every day.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. Challenges We Address Section -->
-    <section id="challenges" class="section-full-dark">
+    <!-- Challenges Section -->
+    <section id="challenges" class="section-full-white">
       <div class="section-container">
-        <h2 class="section-title title-light" data-en="Challenges We Address" data-ca="Reptes que Resolem">Challenges We Address</h2>
-        <div class="grid-2">
-          <div class="challenge-card">
-            <h3 data-en="Unclear Roles & Overlapping Responsibilities" data-ca="Manca de Claredat en Rols i Responsabilitats">Unclear Roles & Overlapping Responsibilities</h3>
-            <p data-en="Ambiguity in job functions leads to bottlenecks, duplicated tasks, and reduced operational agility."
-               data-ca="La la manca de definició en les funcions genera colls d'ampolla, tasques duplicades i pèrdua d'agilitat.">
-              Ambiguity in job functions leads to bottlenecks, duplicated tasks, and reduced operational agility.
-            </p>
+        <h2 class="section-title" data-en="Challenges We Address" data-ca="Quins Problemes Hem Detectat?">Challenges We Address</h2>
+        <div class="challenges-container">
+          <div class="challenge-tabs">
+            <button class="challenge-tab-btn active" data-challenge="people" onclick="userSelectChallenge('people', this)">
+              <span data-en="People Management" data-ca="Gestió de Persones">People Management</span>
+            </button>
+            <button class="challenge-tab-btn" data-challenge="methodology" onclick="userSelectChallenge('methodology', this)">
+              <span data-en="Work Methodology" data-ca="Metodologia de Treball">Work Methodology</span>
+            </button>
+            <button class="challenge-tab-btn" data-challenge="project" onclick="userSelectChallenge('project', this)">
+              <span data-en="Project Management" data-ca="Gestió de Projectes">Project Management</span>
+            </button>
+            <button class="challenge-tab-btn" data-challenge="improvement" onclick="userSelectChallenge('improvement', this)">
+              <span data-en="Continuous Improvement" data-ca="Millora Contínua">Continuous Improvement</span>
+            </button>
           </div>
-          <div class="challenge-card">
-            <h3 data-en="Inconsistent Process Execution" data-ca="Execució Inconstant dels Processos">Inconsistent Process Execution</h3>
-            <p data-en="Lack of standardized work causes variability in deliverable quality and team productivity."
-               data-ca="La falta de procediments estàndard provoca variabilitat en la qualitat i la productivitat.">
-              Lack of standardized work causes variability in deliverable quality and team productivity.
-            </p>
-          </div>
-          <div class="challenge-card">
-            <h3 data-en="Low Operational Visibility" data-ca="Baixa Visibilitat Operativa">Low Operational Visibility</h3>
-            <p data-en="Without clear visual tracking, teams struggle to identify delays and measure overall workflow performance."
-               data-ca="Sense un seguiment visual clar, els equips tenen dificultats per identificar retards i mesurar el rendiment.">
-              Without clear visual tracking, teams struggle to identify delays and measure overall workflow performance.
-            </p>
-          </div>
-          <div class="challenge-card">
-            <h3 data-en="Absence of Structured Improvement" data-ca="Manca de Millora Estructurada">Absence of Structured Improvement</h3>
-            <p data-en="Without formal kaizen and problem-solving mechanisms, operational issues remain recurring."
-               data-ca="Sense mecanismes formals de resolució de problemes, els errors operatius es repeteixen de manera sistemàtica.">
-              Without formal kaizen and problem-solving mechanisms, operational issues remain recurring.
-            </p>
+
+          <div class="challenge-display-card" id="challenge-display-card">
+            <div id="challenge-people" class="challenge-panel active">
+              <h3 data-en="People Management" data-ca="Gestió de Persones">People Management</h3>
+              <ul class="challenge-points">
+                <li data-en="Unresolved conflicts arise because accountability and responsibilities are not clearly defined."
+                    data-ca="Sorgeix un conflicte i no s’afronta perquè la responsabilitat de qui l’ha de gestionar no està clara.">
+                  Unresolved conflicts arise because accountability and responsibilities are not clearly defined.
+                </li>
+              </ul>
+            </div>
+            <div id="challenge-methodology" class="challenge-panel">
+              <h3 data-en="Work Methodology" data-ca="Metodologia de Treball">Work Methodology</h3>
+              <ul class="challenge-points">
+                <li data-en="Deliverables lack consistent formats and structures." data-ca="L’empresa presenta un mateix projecte amb formats i estructures diferents.">Deliverables lack consistent formats and structures.</li>
+              </ul>
+            </div>
+            <div id="challenge-project" class="challenge-panel">
+              <h3 data-en="Project Management" data-ca="Gestió de Projectes">Project Management</h3>
+              <ul class="challenge-points">
+                <li data-en="Competing top priorities caused by poor capacity planning." data-ca="Treballadors amb dues tasques prioritàries al mateix moment.">Competing top priorities caused by poor capacity planning.</li>
+              </ul>
+            </div>
+            <div id="challenge-improvement" class="challenge-panel">
+              <h3 data-en="Continuous Improvement" data-ca="Millora Contínua">Continuous Improvement</h3>
+              <ul class="challenge-points">
+                <li data-en="Lack of initiative and proactive problem-solving frameworks." data-ca="Falta d’idees i d’iniciativa per part dels treballadors.">Lack of initiative and proactive problem-solving frameworks.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Solutions Section -->
+    <!-- Solutions Section -->
     <section id="solutions" class="section-full-white">
       <div class="section-container">
-        <h2 class="section-title title-dark" data-en="Solutions" data-ca="Solucions">Solutions</h2>
+        <h2 class="section-title" data-en="Our Solutions" data-ca="Les Nostres Solucions">Our Solutions</h2>
         
-        <div class="grid-4">
-          
+        <div class="solutions-grid">
           <!-- Card 1: Clear Responsibilities (Links to detail page) -->
           <a href="clear-responsibilities.html" class="card-link">
             <div class="solution-card">
               <div class="solution-image-container">
-                <img src="Organigram.png" alt="Clear Responsibilities" />
+                <img src="Organigram.png" alt="Responsabilitats - Organigram" />
               </div>
               <h3 data-en="Clear Responsibilities" data-ca="Responsabilitats">Clear Responsibilities</h3>
               <p data-en="Structure with clear roles and defined responsibilities for each workstation."
@@ -297,67 +376,55 @@
           <!-- Card 2: Standard Work -->
           <div class="solution-card">
             <div class="solution-image-container">
-              <img src="standard-work.png" alt="Standard Work" />
+              <img src="ProcessMapping.png" alt="Treball estàndard - Process Mapping" />
             </div>
-            <h3 data-en="Standard Work" data-ca="Treball Estàndard">Standard Work</h3>
-            <p data-en="Clear procedures and guidelines to guarantee consistent output quality across all teams."
-               data-ca="Procediments i guies clares per garantir la mateixa qualitat de treball a tots els equips.">
-              Clear procedures and guidelines to guarantee consistent output quality across all teams.
+            <h3 data-en="Standard Work" data-ca="Treball estàndard">Standard Work</h3>
+            <p data-en="Define work processes with concrete steps, standardized prices, and timelines."
+               data-ca="Definir els processos de treball amb passos concrets, preus i terminis estàndard.">
+              Define work processes with concrete steps, standardized prices, and timelines.
             </p>
           </div>
 
           <!-- Card 3: Visual Management -->
           <div class="solution-card">
             <div class="solution-image-container">
-              <img src="visual-management.png" alt="Visual Management" />
+              <img src="KPI.png" alt="Seguiment visual - KPI" />
             </div>
-            <h3 data-en="Visual Management" data-ca="Gestió Visual">Visual Management</h3>
-            <p data-en="Real-time performance indicators and operational clarity across all processes."
-               data-ca="Indicadors de rendiment en temps real i claredat operacional a tots els processos.">
-              Real-time performance indicators and operational clarity across all processes.
+            <h3 data-en="Visual Management" data-ca="Seguiment visual">Visual Management</h3>
+            <p data-en="Implement indicators to monitor progress, boosting speed and operational efficiency."
+               data-ca="Implementar indicadors a seguir per millorar la capacitat d'actuar amb rapidesa i eficàcia.">
+              Implement indicators to monitor progress, boosting speed and operational efficiency.
             </p>
           </div>
 
           <!-- Card 4: Continuous Improvement -->
           <div class="solution-card">
             <div class="solution-image-container">
-              <img src="continuous-improvement.png" alt="Millora Contínua" />
+              <img src="Formation.png" alt="Millora contínua - Formation" />
             </div>
-            <h3 data-en="Continuous Improvement" data-ca="Millora Contínua">Continuous Improvement</h3>
-            <p data-en="Structured frameworks to foster ongoing optimization and team problem-solving."
-               data-ca="Estructures metodològiques per impulsar l'optimització constant i la resolució de problemes.">
-              Structured frameworks to foster ongoing optimization and team problem-solving.
+            <h3 data-en="Continuous Improvement" data-ca="Millora contínua">Continuous Improvement</h3>
+            <p data-en="Build a continuous improvement mindset and embed it into the company culture."
+               data-ca="Construir una mentalitat de millora contínua i integrar-la a la cultura de l'empresa.">
+              Build a continuous improvement mindset and embed it into the company culture.
             </p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- 4. Get in Touch / Contact Section -->
-    <section id="contact" class="section-full-dark">
+    <!-- Contact Section -->
+    <section id="contact">
       <div class="section-container">
-        <h2 class="section-title title-light" data-en="Get in Touch" data-ca="Contacte">Get in Touch</h2>
+        <h2 class="section-title" data-en="Get in Touch" data-ca="Contacta amb Nosaltres">Get in Touch</h2>
         <div class="contact-container">
-          <form action="#" method="post" onsubmit="event.preventDefault(); alert('Message sent!');">
-            <div class="form-group">
-              <label for="name" data-en="Full Name" data-ca="Nom i Cognoms">Full Name</label>
-              <input type="text" id="name" required placeholder="John Doe" />
-            </div>
-            <div class="form-group">
-              <label for="email" data-en="Email Address" data-ca="Correu Electrònic">Email Address</label>
-              <input type="email" id="email" required placeholder="john@example.com" />
-            </div>
-            <div class="form-group">
-              <label for="message" data-en="Message" data-ca="Missatge">Message</label>
-              <textarea id="message" required placeholder="How can we help your organization?"></textarea>
-            </div>
-            <button type="submit" class="submit-btn" data-en="Send Message" data-ca="Enviar Missatge">Send Message</button>
-          </form>
+          <div class="contact-info">
+            <p><strong>Email:</strong><br /><a href="mailto:jaume.costa@leanserviceconsulting.com">jaume.costa@leanserviceconsulting.com</a></p>
+            <p><strong>Phone (UAE):</strong><br /><a href="tel:+971585272837">+971 58 527 2837</a></p>
+            <p><strong>Phone (Spain):</strong><br /><a href="tel:+34636138078">+34 636 13 80 78</a></p>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
@@ -365,6 +432,7 @@
   </footer>
 
   <script>
+    // Language Switcher Function
     function switchLanguage(lang) {
       document.querySelectorAll('#btn-en, #btn-ca').forEach(btn => btn.classList.remove('active'));
       const activeBtn = document.getElementById(`btn-${lang}`);
@@ -372,9 +440,95 @@
 
       document.querySelectorAll('[data-' + lang + ']').forEach(el => {
         const text = el.getAttribute(`data-${lang}`);
-        if (text) el.innerHTML = text;
+        if (text) {
+          el.innerHTML = text;
+        }
       });
     }
+
+    // --- About Us Tab Handler ---
+    function setTab(tabId, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById(`tab-${tabId}`);
+      if (panel) panel.classList.add('active');
+    }
+
+    function userSelectTab(tabId, btn) {
+      setTab(tabId, btn);
+      resetAboutTimer();
+    }
+
+    // --- Challenges Tab Handler ---
+    function setChallenge(challengeId, btn) {
+      document.querySelectorAll('.challenge-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      document.querySelectorAll('.challenge-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById(`challenge-${challengeId}`);
+      if (panel) panel.classList.add('active');
+
+      const card = document.getElementById('challenge-display-card');
+      const categoryColors = {
+        people: 'var(--color-people)',
+        methodology: 'var(--color-methodology)',
+        project: 'var(--color-project)',
+        improvement: 'var(--color-improvement)'
+      };
+
+      if (card && categoryColors[challengeId]) {
+        card.style.borderLeftColor = categoryColors[challengeId];
+      }
+    }
+
+    function userSelectChallenge(challengeId, btn) {
+      setChallenge(challengeId, btn);
+      resetChallengeTimer();
+    }
+
+    // --- Auto-Rotation Timers (5 seconds) ---
+    let aboutTimer;
+    let challengeTimer;
+
+    function startAboutRotation() {
+      aboutTimer = setInterval(() => {
+        const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+        const currentIndex = buttons.findIndex(btn => btn.classList.contains('active'));
+        const nextIndex = (currentIndex + 1) % buttons.length;
+        const nextBtn = buttons[nextIndex];
+        const tabId = nextBtn.getAttribute('data-tab');
+        setTab(tabId, nextBtn);
+      }, 5000);
+    }
+
+    function resetAboutTimer() {
+      clearInterval(aboutTimer);
+      startAboutRotation();
+    }
+
+    function startChallengeRotation() {
+      challengeTimer = setInterval(() => {
+        const buttons = Array.from(document.querySelectorAll('.challenge-tab-btn'));
+        const currentIndex = buttons.findIndex(btn => btn.classList.contains('active'));
+        const nextIndex = (currentIndex + 1) % buttons.length;
+        const nextBtn = buttons[nextIndex];
+        const challengeId = nextBtn.getAttribute('data-challenge');
+        setChallenge(challengeId, nextBtn);
+      }, 5000);
+    }
+
+    function resetChallengeTimer() {
+      clearInterval(challengeTimer);
+      startChallengeRotation();
+    }
+
+    // Initialize auto-rotations on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      startAboutRotation();
+      startChallengeRotation();
+    });
   </script>
 </body>
 </html>
