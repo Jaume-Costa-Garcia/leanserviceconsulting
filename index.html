@@ -440,8 +440,8 @@
       });
     }
 
-    // About Us Tab Handler
-    function userSelectTab(tabId, btn) {
+    // --- About Us Tab Handler ---
+    function setTab(tabId, btn) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       
@@ -450,8 +450,13 @@
       if (panel) panel.classList.add('active');
     }
 
-    // Challenges Tab Handler with Dynamic Color Accent
-    function userSelectChallenge(challengeId, btn) {
+    function userSelectTab(tabId, btn) {
+      setTab(tabId, btn);
+      resetAboutTimer();
+    }
+
+    // --- Challenges Tab Handler ---
+    function setChallenge(challengeId, btn) {
       document.querySelectorAll('.challenge-tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       
@@ -471,6 +476,53 @@
         card.style.borderLeftColor = categoryColors[challengeId];
       }
     }
+
+    function userSelectChallenge(challengeId, btn) {
+      setChallenge(challengeId, btn);
+      resetChallengeTimer();
+    }
+
+    // --- Auto-Rotation Timers (5 seconds) ---
+    let aboutTimer;
+    let challengeTimer;
+
+    function startAboutRotation() {
+      aboutTimer = setInterval(() => {
+        const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+        const currentIndex = buttons.findIndex(btn => btn.classList.contains('active'));
+        const nextIndex = (currentIndex + 1) % buttons.length;
+        const nextBtn = buttons[nextIndex];
+        const tabId = nextBtn.getAttribute('data-tab');
+        setTab(tabId, nextBtn);
+      }, 5000);
+    }
+
+    function resetAboutTimer() {
+      clearInterval(aboutTimer);
+      startAboutRotation();
+    }
+
+    function startChallengeRotation() {
+      challengeTimer = setInterval(() => {
+        const buttons = Array.from(document.querySelectorAll('.challenge-tab-btn'));
+        const currentIndex = buttons.findIndex(btn => btn.classList.contains('active'));
+        const nextIndex = (currentIndex + 1) % buttons.length;
+        const nextBtn = buttons[nextIndex];
+        const challengeId = nextBtn.getAttribute('data-challenge');
+        setChallenge(challengeId, nextBtn);
+      }, 5000);
+    }
+
+    function resetChallengeTimer() {
+      clearInterval(challengeTimer);
+      startChallengeRotation();
+    }
+
+    // Initialize auto-rotations on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      startAboutRotation();
+      startChallengeRotation();
+    });
   </script>
 </body>
 </html>
