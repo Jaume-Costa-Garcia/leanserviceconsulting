@@ -63,30 +63,36 @@
     .lang-toggle button { background: none; border: none; cursor: pointer; color: #64748B; font-size: 0.9rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; transition: all 0.2s; }
     .lang-toggle button.active { color: #FFFFFF; background: var(--accent); }
 
-    /* Layout Sections & White Surrounding Container Frames */
+    /* Full-Width Section Wrapper (Dark Default) */
     section { 
-      padding: 3rem 1.5rem; 
+      padding: 3.5rem 0; 
       width: 100%; 
-      max-width: 1200px; 
-      margin: 2.5rem auto; 
     }
 
-    .section-frame {
+    /* Full-Width White Section Styling */
+    .section-full-white {
       background: var(--bg-light);
-      border-radius: 20px;
-      padding: 2.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
 
-    .section-frame .section-title {
+    /* Inner Container to align and center content */
+    .section-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-full-white .section-title {
       color: var(--text-dark);
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     
     /* Hero Section */
     .hero { 
       text-align: center; 
-      padding: 5rem 3rem 2rem 3rem; 
+      padding: 5rem 1.5rem 2.5rem 1.5rem; 
       background: var(--bg-dark); 
       width: 100%; 
     }
@@ -394,9 +400,8 @@
     }
 
     @media (max-width: 768px) {
-      header, .hero, .contact-container, .challenges-container { padding-left: 1.5rem; padding-right: 1.5rem; }
-      section { padding: 1.5rem 1rem; }
-      .section-frame { padding: 1.5rem; }
+      header, .hero, .contact-container, .challenges-container, .vision-box { padding-left: 1.25rem; padding-right: 1.25rem; }
+      section { padding: 2.5rem 0; }
       .hero h1 { font-size: 2.25rem; }
       .challenge-tabs { grid-template-columns: 1fr; }
     }
@@ -440,9 +445,9 @@
   </div>
 
   <main>
-    <!-- Vision / Mission / Values Section (Surrounded by White Frame Container) -->
-    <section id="about">
-      <div class="section-frame">
+    <!-- Vision / Mission / Values Section (Full-Width White Background) -->
+    <section id="about" class="section-full-white">
+      <div class="section-container">
         <div class="vision-box" id="vision-box">
           <div class="tab-container">
             <button class="tab-btn active" data-tab="vision" onclick="userSelectTab('vision', this)">
@@ -518,9 +523,9 @@
       </div>
     </section>
 
-    <!-- Challenges Section (Surrounded by White Frame Container) -->
-    <section id="challenges">
-      <div class="section-frame">
+    <!-- Challenges Section (Full-Width White Background) -->
+    <section id="challenges" class="section-full-white">
+      <div class="section-container">
         <h2 class="section-title" data-en="Challenges We Address" data-ca="Quins Problemes Hem Detectat?">Challenges We Address</h2>
         
         <div class="challenges-container">
@@ -670,9 +675,9 @@
       </div>
     </section>
 
-    <!-- Solutions Section (Surrounded by White Frame Container) -->
-    <section id="solutions">
-      <div class="section-frame">
+    <!-- Solutions Section (Full-Width White Background) -->
+    <section id="solutions" class="section-full-white">
+      <div class="section-container">
         <h2 class="section-title" data-en="Our Solutions" data-ca="Les Nostres Solucions">Our Solutions</h2>
         <div class="grid">
           <div class="card">
@@ -702,21 +707,23 @@
 
     <!-- Contact Section -->
     <section id="contact">
-      <h2 class="section-title" data-en="Get in Touch" data-ca="Contacta amb Nosaltres">Get in Touch</h2>
-      <div class="contact-container">
-        <div class="contact-info">
-          <p><strong data-en="Email:" data-ca="Correu electrònic:">Email:</strong><br />
-            <a href="mailto:jaume.costa@leanserviceconsulting.com">jaume.costa@leanserviceconsulting.com</a>
-          </p>
-          <p><strong data-en="Phone (UAE):" data-ca="Telèfon (EAU):">Phone (UAE):</strong><br />
-            <a href="tel:+971585272837">+971 58 527 2837</a>
-          </p>
-          <p><strong data-en="Phone (Spain):" data-ca="Telèfon (Espanya):">Phone (Spain):</strong><br />
-            <a href="tel:+34636138078">+34 636 13 80 78</a>
-          </p>
-          <p><strong data-en="Location:" data-ca="Ubicació:">Location:</strong><br />
-            Dubai, UAE / Spain / Remote Consulting
-          </p>
+      <div class="section-container">
+        <h2 class="section-title" data-en="Get in Touch" data-ca="Contacta amb Nosaltres">Get in Touch</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <p><strong data-en="Email:" data-ca="Correu electrònic:">Email:</strong><br />
+              <a href="mailto:jaume.costa@leanserviceconsulting.com">jaume.costa@leanserviceconsulting.com</a>
+            </p>
+            <p><strong data-en="Phone (UAE):" data-ca="Telèfon (EAU):">Phone (UAE):</strong><br />
+              <a href="tel:+971585272837">+971 58 527 2837</a>
+            </p>
+            <p><strong data-en="Phone (Spain):" data-ca="Telèfon (Espanya):">Phone (Spain):</strong><br />
+              <a href="tel:+34636138078">+34 636 13 80 78</a>
+            </p>
+            <p><strong data-en="Location:" data-ca="Ubicació:">Location:</strong><br />
+              Dubai, UAE / Spain / Remote Consulting
+            </p>
+          </div>
         </div>
       </div>
     </section>
