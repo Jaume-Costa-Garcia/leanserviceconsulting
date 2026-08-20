@@ -56,13 +56,25 @@
     .brand-container { display: flex; align-items: center; text-decoration: none; }
     .brand-logo { height: 40px; width: auto; object-fit: contain; }
     
-    .nav-links { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links { 
+      display: flex; 
+      align-items: center; 
+      gap: 1.5rem; 
+      flex-wrap: wrap; 
+      margin-left: 2.5rem; /* Creates spacing after the logo */
+      margin-right: auto;  /* Pushes the language buttons all the way to the right */
+    }    
+    .nav-links a { 
+      font-family: 'Playfair Display', Georgia, serif; 
+      font-weight: 400; 
+      letter-spacing: 0.01em; 
+    }    
     .nav-menu { display: flex; align-items: center; gap: 1.25rem; list-style: none; }
     .nav-menu a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
     .nav-menu a:hover { color: var(--accent); }
 
-    .lang-toggle { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.9rem; color: #64748B; }
-    .lang-toggle button { background: none; border: none; cursor: pointer; color: #64748B; font-size: 0.9rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; transition: all 0.2s; }
+    .lang-toggle { display: flex; align-items: center; gap: 0.5rem; font-weight: 400; font-size: 0.95rem; font-family: 'Playfair Display', Georgia, serif; }    
+    .lang-toggle button { background: none; border: none; cursor: pointer; color: #64748B; font-family: 'Playfair Display', Georgia, serif; font-weight: 400; letter-spacing: 0.02em; }
     .lang-toggle button.active { color: #FFFFFF; background: var(--accent); }
 
     /* Section Wrapper */
