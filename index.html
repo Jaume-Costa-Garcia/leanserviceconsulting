@@ -41,21 +41,29 @@
 }
 
     /* Header & Navigation */
-    header { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      padding: 1rem 3rem; 
-      border-bottom: 1px solid var(--border-light); 
-      position: sticky; 
-      top: 0; 
-      background: var(--bg-light); 
-      z-index: 100; 
-      width: 100%; 
+    header {
+      display: flex;
+      justify-content: flex-start; /* Changed from space-between */
+      align-items: center;
+      padding: 1rem 3rem;
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      background: var(--bg-light);
+      z-index: 100;
+      width: 100%;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
-    .brand-container { display: flex; align-items: center; text-decoration: none; }
+    .brand-container { display: flex; align-items: center; text-decoration: none; margin-right: 2.5rem; }
     .brand-logo { height: 40px; width: auto; object-fit: contain; }
+    
+    /* Ensure main navigation bar takes 100% width */
+    .nav-container, header nav {
+      display: flex !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box;
+    }
     
     .nav-links { 
       display: flex; 
@@ -63,7 +71,7 @@
       gap: 1.5rem; 
       flex-wrap: wrap; 
       margin-left: 2.5rem; /* Creates spacing after the logo */
-      margin-right: auto; /* Pushes everything after it (EN/CA) to the far right */
+      margin-right: auto;
     }    
     .nav-links a { 
       font-family: 'Playfair Display', Georgia, serif; 
@@ -81,10 +89,10 @@
       font-weight: 400; 
       font-size: 0.95rem; 
       font-family: 'Playfair Display', Georgia, serif; 
-      margin-left: 0; /* Resets any margin so it sits neatly on the far right */
+      margin-left: auto !important; /* Resets any margin so it sits neatly on the far right */
     }    
     .lang-toggle button { background: none; border: none; cursor: pointer; color: #64748B; font-family: 'Playfair Display', Georgia, serif; font-weight: 400; letter-spacing: 0.02em; }
-    .lang-toggle button.active { color: #FFFFFF; background: var(--accent); }
+    .lang-toggle button.active { color: #0F172A; background: transparent; font-weight: 600; }
 
     /* Section Wrapper */
     section { padding: 3.5rem 0; width: 100%; }
@@ -350,25 +358,28 @@
 <body>
 
   <!-- Navigation Header -->
-  <header>
-    <a href="#" class="brand-container">
-      <img src="logo.png" alt="Lean Service Consulting Logo" class="brand-logo" />
-    </a>
-    
-    <div class="nav-links">
-      <ul class="nav-menu">
-        <li><a href="#about" data-en="About Us" data-ca="Sobre Nosaltres">About Us</a></li>
-        <li><a href="#challenges" data-en="Challenges" data-ca="Reptes">Challenges</a></li>
-        <li><a href="#solutions" data-en="Solutions" data-ca="Solucions">Solutions</a></li>
-        <li><a href="#contact" data-en="Get in Touch" data-ca="Contacte">Get in Touch</a></li>
-      </ul>
-      <div class="lang-toggle">
-        <button id="btn-en" onclick="switchLanguage('en')" class="active">EN</button>
-        <span>|</span>
-        <button id="btn-ca" onclick="switchLanguage('ca')">CA</button>
-      </div>
-    </div>
-  </header>
+<header>
+  <a href="#" class="brand-container">
+    <img src="logo.png" alt="Lean Service Consulting Logo" class="brand-logo" />
+  </a>
+
+  <!-- 1. Nav Links Container -->
+  <div class="nav-links">
+    <ul class="nav-menu">
+      <li><a href="#about" data-en="About Us" data-ca="Sobre Nosaltres">About Us</a></li>
+      <li><a href="#challenges" data-en="Challenges" data-ca="Reptes">Challenges</a></li>
+      <li><a href="#solutions" data-en="Solutions" data-ca="Solucions">Solutions</a></li>
+      <li><a href="#contact" data-en="Get in Touch" data-ca="Contacte">Get in Touch</a></li>
+    </ul>
+  </div> <!-- CLOSING DIV MOVED HERE -->
+
+  <!-- 2. Language Switcher (Now outside nav-links) -->
+  <div class="lang-toggle">
+    <button id="btn-en" onclick="switchLanguage('en')" class="active">EN</button>
+    <span>|</span>
+    <button id="btn-ca" onclick="switchLanguage('ca')">CA</button>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <div class="hero">
