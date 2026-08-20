@@ -244,6 +244,72 @@
     @media (max-width: 600px) {
       .solutions-grid { grid-template-columns: 1fr; }
     }
+  /* About Section Background and Container Setup */
+.about-hero-section {
+  position: relative;
+  background-image: url("Background 'About US'.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 85vh;
+  padding: 4rem 3rem 2rem 3rem;
+  box-sizing: border-box;
+}
+
+/* Optional Overlay to balance background image and keep white text readable */
+.about-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.45);
+  z-index: 1;
+}
+
+.about-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh;
+}
+
+/* Top-Left Header with Thin Serif Font Style */
+.about-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  text-align: left;
+  margin: 0;
+  font-weight: 400; /* Thinner font weight */
+  letter-spacing: 0.01em;
+}
+
+/* Subheadings inside Tab Panels (Thin Serif typography) */
+.tab-panel h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400; /* Thinner font weight */
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #FFFFFF;
+}
+
+/* Bottom Middle Alignment for Menu Tabs and Panels */
+.about-content-bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.about-content-bottom .vision-box {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
   </style>
 </head>
 <body>
@@ -284,46 +350,51 @@
 
   <main>
     <!-- About Section -->
-    <section id="about">
-      <div class="section-container">
-        <h2 class="section-title" data-en="About Us" data-ca="Sobre Nosaltres">About Us</h2>
-        <div class="vision-box" id="vision-box">
-          <div class="tab-container">
-            <button class="tab-btn active" data-tab="vision" onclick="userSelectTab('vision', this)">
-              <span data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</span>
-            </button>
-            <button class="tab-btn" data-tab="mission" onclick="userSelectTab('mission', this)">
-              <span data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</span>
-            </button>
-            <button class="tab-btn" data-tab="values" onclick="userSelectTab('values', this)">
-              <span data-en="Our Values" data-ca="Els Nostres Valors">Our Values</span>
-            </button>
-          </div>
+    <section id="about" class="about-hero-section">
+  <div class="about-overlay">
+    <h2 class="about-title" data-en="About Us" data-ca="Sobre Nosaltres">About Us</h2>
+    
+    <div class="about-content-bottom">
+      <div class="vision-box" id="vision-box">
+        <div class="tab-container">
+          <button class="tab-btn active" data-tab="vision" onclick="userSelectTab('vision', this)">
+            <span data-en="Our Vision" data-ca="La Nostra Visió">Our Vision</span>
+          </button>
+          <button class="tab-btn" data-tab="mission" onclick="userSelectTab('mission', this)">
+            <span data-en="Our Mission" data-ca="La Nostra Missió">Our Mission</span>
+          </button>
+          <button class="tab-btn" data-tab="values" onclick="userSelectTab('values', this)">
+            <span data-en="Our Values" data-ca="Els Nostres Valors">Our Values</span>
+          </button>
+        </div>
 
-          <div id="tab-vision" class="tab-panel active">
-            <h2 data-en="Universal Operational Excellence" data-ca="Excel·lència Operativa Universal">Universal Operational Excellence</h2>
-            <p data-en="Our vision is <strong>to extend the application of Lean methodologies</strong> beyond large industrial companies and help <strong>create resilient, efficient and adaptable organizations.</strong>"
-               data-ca="La nostra visió és <strong>estendre l’aplicació de les metodologies Lean</strong> més enllà de les grans empreses industrials i ajudar a <strong>crear organitzacions resilients, eficients i adaptables.</strong>">
-              Our vision is <strong>to extend the application of Lean methodologies</strong> beyond large industrial companies and help <strong>create resilient, efficient and adaptable organizations.</strong>
-            </p>
-          </div>
-          <div id="tab-mission" class="tab-panel">
-            <h2 data-en="Building stronger and more efficient organizations" data-ca="Construint organitzacions més fortes i eficients">Building stronger and more efficient organizations</h2>
-            <p data-en="We accompany companies in their operational transformation, optimizing processes to maximize value and save resources."
-               data-ca="Acompanyem les empreses en la seva transformació operativa, optimitzant processos per maximitzar el valor i estalviar recursos.">
-              We accompany companies in their operational transformation, optimizing processes to maximize value and save resources.
-            </p>
-          </div>
-          <div id="tab-values" class="tab-panel">
-            <h2 data-en="People at the center" data-ca="Les persones al centre">People at the center</h2>
-            <p data-en="The most important element of any organization is its team and the work it carries out every day."
-               data-ca="L'element més important de qualsevol organització és el seu equip i la feina que duu a terme cada dia.">
-              The most important element of any organization is its team and the work it carries out every day.
-            </p>
-          </div>
+        <div id="tab-vision" class="tab-panel active">
+          <h2 data-en="Universal Operational Excellence" data-ca="Excel·lència Operativa Universal">Universal Operational Excellence</h2>
+          <p data-en="Our vision is <strong>to extend the application of Lean methodologies</strong> beyond large industrial companies and help <strong>create resilient, efficient and adaptable organizations.</strong>"
+             data-ca="La nostra visió és <strong>estendre l’aplicació de les metodologies Lean</strong> més enllà de les grans empreses industrials i ajudar a <strong>crear organitzacions resilients, eficients i adaptables.</strong>">
+            Our vision is <strong>to extend the application of Lean methodologies</strong> beyond large industrial companies and help <strong>create resilient, efficient and adaptable organizations.</strong>
+          </p>
+        </div>
+
+        <div id="tab-mission" class="tab-panel">
+          <h2 data-en="Building stronger and more efficient organizations" data-ca="Construint organitzacions més fortes i eficients">Building stronger and more efficient organizations</h2>
+          <p data-en="We accompany companies in their operational transformation, optimizing processes to maximize value and save resources."
+             data-ca="Acompanyem les empreses en la seva transformació operativa, optimitzant processos per maximitzar el valor i estalviar recursos.">
+            We accompany companies in their operational transformation, optimizing processes to maximize value and save resources.
+          </p>
+        </div>
+
+        <div id="tab-values" class="tab-panel">
+          <h2 data-en="People at the center" data-ca="Les persones al centre">People at the center</h2>
+          <p data-en="The most important element of any organization is its team and the work it carries out every day."
+             data-ca="L'element més important de qualsevol organització és el seu equip i la feina que duu a terme cada dia.">
+            The most important element of any organization is its team and the work it carries out every day.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Challenges Section -->
     <section id="challenges">
