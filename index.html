@@ -183,23 +183,37 @@
 
     /* About Us Box */
     .vision-box { 
-      background: var(--primary-card); 
-      color: #FFF; 
-      padding: 3.5rem 3rem; 
-      border-radius: 16px; 
-      border: 1px solid var(--border-dark);
-      text-align: center; 
-      width: 100%; 
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
+  background: rgba(128, 128, 128, 0.25); 
+  backdrop-filter: blur(8px);
+  color: #FFF; 
+  padding: 3.5rem 3rem; 
+  border-radius: 16px; 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center; 
+  width: 100%; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
 
     .tab-container { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-    .tab-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #FFFFFF; padding: 0.75rem 1.6rem; border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.6rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
-    .tab-btn.active { background: var(--accent); color: #FFFFFF; border-color: var(--accent); box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35); }
+    .tab-btn { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #FFFFFF; padding: 0.75rem 1.6rem; border-radius: 30px; cursor: pointer; font-weight: 400; font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.6rem; transition: all 0.3s ease; position: relative; overflow: hidden; }    .tab-btn.active { background: var(--accent); color: #FFFFFF; border-color: var(--accent); box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35); }
     .tab-panel { display: none; animation: fadeIn 0.4s ease-in-out forwards; }
     .tab-panel.active { display: block; }
-    .tab-panel h2 { color: #FFF; margin-bottom: 1rem; font-size: 1.8rem; }
-    .tab-panel p { color: var(--text-muted); font-size: 1.2rem; max-width: 900px; margin: 0 auto; line-height: 1.7; }
+    .tab-panel h2 { 
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      color: #FFF; 
+      margin-bottom: 1rem; 
+      font-size: 1.8rem; 
+    }
+    .tab-panel p { 
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      color: #F8FAFC; 
+      font-size: 1.2rem; 
+      max-width: 900px; 
+      margin: 0 auto; 
+      line-height: 1.7; 
+    }
 
     /* Challenges Box */
     .challenges-container { background: var(--primary-card); border: 1px solid var(--border-dark); border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); width: 100%; }
